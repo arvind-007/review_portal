@@ -44,12 +44,12 @@ echo $url->baseURL;?>";
                                 <form method="post" autocomplete="off" id="frm-login">
                                     <div class="form-outline mb-2 inputvalues" style="text-align:left">
                                         <label class="form-label">Email/Mobile</label>
-                                        <input type="text" name="email" class="form-control" required />
+                                        <input type="text" name="email" class="form-control" />
                                     </div>
 
                                     <div class="form-outline form-white mb-2 inputvalues" style="text-align:left">
                                         <label class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control " required />
+                                        <input type="password" name="password" class="form-control " />
                                     </div>
                                     <input type="hidden" name="frm_name" value="login">
 

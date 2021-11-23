@@ -1,14 +1,4 @@
 $(function () {
-    register = () => {
-        $("#sec-login").hide();
-        $("#sec-register").show();
-    }
-
-    login = () => {
-        $("#sec-register").hide();
-        $("#sec-login").show();
-    }
-
     $("#frm-register").validate({
         rules: {
             fname: {

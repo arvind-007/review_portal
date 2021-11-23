@@ -92,8 +92,8 @@ echo $url->baseURL;?>";
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
-    <script src="js/validation_functions.js"></script>
-    <script src="js/auth.js"></script>
+    <script src="../js/validation_functions.js"></script>
+    <script src="../js/auth.js"></script>
 
 </body>
 

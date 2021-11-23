@@ -18,8 +18,7 @@
     }
     </style>
     <script>
-    const BASE_URL = "<?php $url = config('app');
-echo $url->baseURL;?>";
+    const BASE_URL = "<?php echo base_url(); ?>";
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -71,7 +70,6 @@ echo $url->baseURL;?>";
                                         <label class="form-label">Confirm password</label>
                                         <input name="cpassword" type="password" class="form-control" />
                                     </div>
-                                    <input name="frm_name" type="hidden" value="register">
 
                                     <div class="d-flex justify-content-center">
                                         <button type="submit" class="btn-lg btn-dark form-control">Register</button>

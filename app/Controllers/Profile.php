@@ -23,8 +23,8 @@ class Profile extends BaseController
     {
         $model = $this->usermodel;
         // $id = $_SESSION['user_details']['uid'];
-        $id = 6;
-        $user = $model->getFieldsForJoin('u.mobile,u.email,up.first_name,up.last_name,up.dob,up.gender,up.address,up.profile_photo', 'users_profile up', 'u.id=up.user_id', "u.id=$id", 'left');
+        $id = 11;
+        $user = $model->getFieldsForJoin('users.mobile,users.email,up.first_name,up.last_name,up.dob,up.gender,up.address,up.profile_photo', 'users_profile up', 'users.id=up.user_id', "users.id=$id", 'left');
         echo json_encode([
             "status" => 1,
             "msg" => "successful",
@@ -38,8 +38,8 @@ class Profile extends BaseController
         $model = $this->usermodel;
         $pmodel = $this->profilemodel;
         // $id = $_SESSION['user_details']['uid'];
-        $id = 6;
-        $img_name = $pmodel->getFields('up.profile_photo', "user_id='$id'")[0];
+        $id = 11;
+        $img_name = $pmodel->getFields('users_profile.profile_photo', "user_id='$id'")[0];
         if (isset($_FILES['profile']) && $_FILES['profile']['name']) {
             $photo = $_FILES['profile'];
             $img = explode('.', $photo['name']);
@@ -52,25 +52,25 @@ class Profile extends BaseController
             move_uploaded_file($tmp_name, "uploaded_img/" . $img_name);
         }
         $data = [
-            'mobile' => $_POST['mobile'],
-            'email' => $_POST['email'],
+            'mobile' => $this->request->getPost('mobile'),
+            'email' => $this->request->getPost('email'),
             'updated_at' => date("d/m/Y"),
         ];
         $model->updateRow($data, "id=$id");
         $data = [
-            'first_name' => $_POST['fname'],
-            'last_name' => $_POST['lname'],
-            'dob' => $_POST['dob'],
-            'gender' => isset($_POST['gender']) ? $_POST['gender'] : '',
-            'address' => $_POST['address'],
+            'first_name' => $this->request->getPost('fname'),
+            'last_name' => $this->request->getPost('lname'),
+            'dob' => $this->request->getPost('dob'),
+            'gender' => $this->request->getPost('gender'),
+            'address' => $this->request->getPost('address'),
             'profile_photo' => $img_name,
             'updated_at' => date("d/m/Y"),
         ];
         $pmodel->updateRow($data, "user_id=$id");
         $_SESSION['user_details'] = [
             "uid" => $id,
-            "fname" => $_POST['fname'],
-            "lname" => $_POST['lname'],
+            "fname" => $this->request->getPost('fname'),
+            "lname" => $this->request->getPost('lname'),
         ];
         echo json_encode([
             "status" => 1,
@@ -81,11 +81,11 @@ class Profile extends BaseController
     {
         // $id = $_SESSION['user_details']['uid'];
         $model = $this->usermodel;
-        $id = 6;
-        $password = md5($_POST['password']);
+        $id = 11;
+        $password = md5($this->request->getPost('password'));
         $exist = $model->get("password = '$password' AND id='$id'");
         if ($exist) {
-            $new_pass = md5($_POST['new_password']);
+            $new_pass = md5($this->request->getPost('new_password'));
             $data = [
                 'password' => $new_pass,
             ];

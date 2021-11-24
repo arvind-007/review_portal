@@ -25,6 +25,7 @@ class Dashboard extends BaseController
     {
         echo view('dashboard/header/header_top');
         echo view('dashboard/sidebar/sidebar');
+        echo view('dashboard/content/articles');
         echo view('dashboard/footer/footer.php');
     }
     public function showProfile()

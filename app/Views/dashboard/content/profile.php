@@ -1,6 +1,5 @@
 <div id="content" class="bg-light">
     <?php echo view("dashboard/header/header"); ?>
-    <div id="my"></div>
     <section class="content-header px-2 ">
         <div class="container-fluid">
             <div class="row mb-2">

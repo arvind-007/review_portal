@@ -3,13 +3,13 @@
     <div class="float-end ">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="uploaded_img/avatar7.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img src="<?php echo base_url(); ?>/uploaded_img/avatar7.png" alt="" width="32" height="32"
+                class="rounded-circle me-2">
             <strong class="text-dark"><?php
 //  echo $_SESSION['user_details']['fname'] . " " . $_SESSION['user_details']['lname'];
 ?></strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="<?php echo base_url() . "/public/admin/profile" ?>">Profile</a></li>
             <li>
                 <hr class=" dropdown-divider">
             </li>

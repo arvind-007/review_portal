@@ -15,21 +15,7 @@ class UserModel extends Model
         $this->builder = $this->db->table('users u');
     }
 
-    public function getAll()
-    {
-        $builder = $this->builder;
-        $builder->select("*");
-        $builder->where('deleted_at is NULL');
-        return $builder->get()->getResultArray();
-    }
-
-    public function insertData($data)
-    {
-        $builder = $this->builder;
-        $builder->insert($data);
-        return $this->db->insertID();
-    }
-
+    // funtion to get rows on the basis of condition
     public function get($where)
     {
         $builder = $this->builder;
@@ -38,6 +24,16 @@ class UserModel extends Model
         return $builder->get()->getResultArray();
     }
 
+    //function to get all row in the table
+    public function getAll()
+    {
+        $builder = $this->builder;
+        $builder->select("*");
+        $builder->where('deleted_at is NULL');
+        return $builder->get()->getResultArray();
+    }
+
+    // function to get fields of rows on the basis of the condition
     public function getFieldsForJoin($column, $otherTable, $cond, $where, $type = null)
     {
         $builder = $this->builder;
@@ -53,6 +49,15 @@ class UserModel extends Model
         return $builder->get()->getResultArray();
     }
 
+    // function to insert data in the table
+    public function insertData($data)
+    {
+        $builder = $this->builder;
+        $builder->insert($data);
+        return $this->db->insertID();
+    }
+
+    // function to update any row
     public function updateRow($data, $where)
     {
         $builder = $this->builder;

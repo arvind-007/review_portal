@@ -12,15 +12,16 @@ class ArticlesModel extends Model
     public function __construct()
     {
         $this->db = db_connect();
-        $this->builder = $this->db->table('articles a');
+        $this->builder = $this->db->table('articles');
     }
 
     // funtion to get rows on the basis of condition
-    public function get($where)
+    public function getFields($column, $where)
     {
         $builder = $this->builder;
-        $builder->select('*');
+        $builder->select($column);
         $builder->where($where);
+        $builder->where('deleted_at is NULL');
         return $builder->get()->getResultArray();
     }
 
@@ -38,7 +39,7 @@ class ArticlesModel extends Model
     {
         $builder = $this->builder;
         $builder->select($column);
-        $builder->where('a.deleted_at is NULL');
+        $builder->where('deleted_at is NULL');
         if ($type) {
             $builder->join($otherTable, $cond, $type);
         } else {
@@ -62,6 +63,14 @@ class ArticlesModel extends Model
         $builder = $this->builder;
         $builder->set($data);
         $builder->where($where);
+        $builder->update();
+    }
+
+    public function deleteRow($id)
+    {
+        $builder = $this->builder;
+        $builder->set(['deleted_at' => date('d/m/Y')]);
+        $builder->where('id', $id);
         $builder->update();
     }
 

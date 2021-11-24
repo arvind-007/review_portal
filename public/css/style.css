@@ -1,11 +1,4 @@
 
-
-#success-msg {
-    color: black;
-    font-size: 30px;
-    text-align: center;
-}
-
 .w-40{
     width : 40%;
 }
@@ -33,4 +26,8 @@ a{
     left:280px;
     right:0;
     top:0;
+}
+
+.error{
+    color: red;
 }

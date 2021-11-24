@@ -21,6 +21,7 @@ class UserModel extends Model
         $builder = $this->builder;
         $builder->select('*');
         $builder->where($where);
+        $builder->where('deleted_at is NULL');
         return $builder->get()->getResultArray();
     }
 

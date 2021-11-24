@@ -71,11 +71,7 @@ $(function() {
         },
         submitHandler: function(form, event) {
             let login = {
-<<<<<<< HEAD
-                url: "http://localhost/review_portal/public/home/login ",
-=======
-                url: BASE_URL + "/auth/login",
->>>>>>> 41f2f8cfd2eca7176ca9f65b124a6629c8affa3e
+                url: "http://localhost/review_portal/public/auth/login",
                 data: $("#frm-login").serialize(),
                 method: "post",
                 dataType: "json",

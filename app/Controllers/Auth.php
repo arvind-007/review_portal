@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Auth extends BaseController
 {
     public $usermodel;
     public $profilemodel;

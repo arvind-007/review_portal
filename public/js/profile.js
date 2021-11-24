@@ -24,7 +24,7 @@ $(function () {
     })
     showProfile = () => {
         let profile = {
-            url: BASE_URL + "dashboard/showProfile",
+            url: BASE_URL + "profile/showProfile",
             data: {
                 frm_name: "profile",
             },
@@ -87,7 +87,7 @@ $(function () {
             event.preventDefault();
             let form_data = new FormData(form);
             let register = {
-                url: BASE_URL + "/dashboard/updateProfile",
+                url: BASE_URL + "/profile/updateProfile",
                 data: form_data,
                 method: "post",
                 dataType: "json",
@@ -128,7 +128,7 @@ $(function () {
             },
         }, submitHandler: function (form) {
             let changepass = {
-                url: BASE_URL + "dashboard/changepass",
+                url: BASE_URL + "profile/changepass",
                 data: $("#frm-change-pass").serialize(),
                 method: "post",
                 dataType: "json",

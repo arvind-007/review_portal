@@ -41,11 +41,11 @@ echo $url->baseURL;?>";
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-black-50 mb-5">Please enter your login and password!</p>
                                 <div class="alert alert-danger" id="login-err" style="display: none;"></div>
-                                <form action="<?php echo base_url('/Home/login');?>" method="post" autocomplete="off"
+                                <form action="<?php echo base_url('/Home/login'); ?>" method="post" autocomplete="off"
                                     id="frm-login">
                                     <div class="form-outline mb-2 inputvalues" style="text-align:left">
-                                        <label class="form-label">Email/Mobile</label>
-                                        <input type="text" name="email" class="form-control" />
+                                        <label class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control" />
                                     </div>
 
                                     <div class="form-outline form-white mb-2 inputvalues" style="text-align:left">

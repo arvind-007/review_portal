@@ -66,4 +66,17 @@ class UserModel extends Model
         $builder->update();
     }
 
+    public function login($uname, $pwd)
+    {
+        $this->builder->where("email", $uname);
+        $this->builder->where("password", $pwd);
+
+        $result = $this->builder->get()->getResultArray();
+        if (count($result) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

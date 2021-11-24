@@ -15,12 +15,12 @@ class Home extends BaseController
 
     public function index()
     {
-        echo view('auth/login');
+        return view('auth/login');
     }
 
     public function signUp()
     {
-        echo view('auth/signup');
+        return view('auth/signup');
     }
 
     public function register()
@@ -91,21 +91,26 @@ class Home extends BaseController
 
     public function login()
     {
-        $uname = $this->input->post('name');
-        $password = $this->input->post('password');
-        $result= $this->Model->login($name,$password); // Login method you have to create
-       if($result=='success')
-       {
-            echo json_encode([
-                'status' => 'success',
-                'message' => 'you are loged in'
-            ]);
-        } 
-        else 
-        {
-            echo json_encode([
-                'status' => 'failed'
-            ]);
+        $model = $this->usermodel;
+        if ($this->request->isAJAX()) {
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+
+            $result = $model->login($email, $password); // Login method you have to create
+
+            if ($result) {
+                echo json_encode([
+                    'status' => 1,
+                    'message' => 'Login success',
+                ]);
+            } else {
+                echo json_encode([
+                    'status' => 0,
+                    'message' => 'Login failed',
+                ]);
+            }
+        } else {
+            die("Invalid request");
         }
     }
 }

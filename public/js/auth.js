@@ -56,7 +56,10 @@ $(function() {
     $("#frm-login input").keyup(function() {
         $("#login-err").hide();
     });
-
+    jQuery.validator.addMethod("valid_name", function(value, element) {
+        // allow any non-whitespace characters as the host part
+        return this.optional(element) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@(?:\S{1,63})$/.test(value);
+    }, 'Please enter a valid email address.');
     $("#frm-login").validate({
         rules: {
             email: {
@@ -68,14 +71,14 @@ $(function() {
         },
         submitHandler: function(form, event) {
             let login = {
-                url: "http://localhost/review_portal/app/Controllers/Home.php/login ",
+                url: "http://localhost/review_portal/public/home/login ",
                 data: $("#frm-login").serialize(),
                 method: "post",
                 dataType: "json",
                 success: function(res) {
-                    if (res.status == "success") {
+                    if (res.status == "1") {
                         $("#login-err").hide();
-                        window.location.reload();
+                        window.location = "http://localhost/review_portal/public/dashboard/index";
                     } else {
                         $("#login-err").html(res.msg);
                         $("#login-err").show();

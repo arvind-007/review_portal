@@ -38,12 +38,12 @@ $(function() {
         submitHandler: function(form, event) {
             event.preventDefault();
             let register = {
-                url: BASE_URL + "public/home/register",
+                url: BASE_URL + "/home/register",
                 data: $("#frm-register").serialize(),
                 method: "post",
                 success: function(res) {
                     let result = JSON.parse(res);
-                    window.location.reload();
+                    // window.location.reload();
                 },
                 error: function(err) {
                     console.log(err);

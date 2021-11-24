@@ -52,7 +52,6 @@ echo $url->baseURL;?>";
                                         <label class="form-label">Password</label>
                                         <input type="password" name="password" class="form-control " />
                                     </div>
-                                    <input type="hidden" name="frm_name" value="login">
 
                                     <p class="small mb-3 pb-lg-2 text-end"><a class="text-dark-50" href="#!">Forgot
                                             password?</a>

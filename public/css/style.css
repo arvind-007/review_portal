@@ -1,0 +1,36 @@
+
+
+#success-msg {
+    color: black;
+    font-size: 30px;
+    text-align: center;
+}
+
+.w-40{
+    width : 40%;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#sidebar{
+    position:fixed;
+    width: 280px;
+    left:0;
+    bottom:0;
+    top:0;
+}
+#content{
+    position:absolute;
+    left:280px;
+    right:0;
+    top:0;
+}

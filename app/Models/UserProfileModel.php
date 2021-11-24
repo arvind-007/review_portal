@@ -13,7 +13,7 @@ class UserProfileModel extends Model
     public function __construct()
     {
         $this->db = db_connect();
-        $this->builder = $this->db->table('users_profile up');
+        $this->builder = $this->db->table('users_profile');
     }
 
     // function to get rows on the basis of condition

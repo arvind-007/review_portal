@@ -30,17 +30,6 @@ echo view('dashboard/sidebar/sidebar');
                     </tr>
                 </thead>
                 <tbody>
-                    <?php for ($i = 0; $i < count($articles); $i++) {
-    echo "<tr>
-    <th>" . ($i + 1) . "</th>
-    <td>" . $articles[$i]['title'] . "</td>
-    <td>" . $articles[$i]['category_id'] . "</td>
-    <td>" . $articles[$i]['created_at'] . "</td>
-    <td><a href='#' class='fas fa-edit me-1' id='btn-edit' uid='" . $articles[$i]['id'] . "'>
-    <a href='#' class='fas fa-trash text-danger me-1' id='btn-dlt' uid='" . $articles[$i]['id'] . "'>
-    <a href='#' class='fas fa-eye text-dark' id='btn-view' uid='" . $articles[$i]['id'] . "'></td>
-    </tr>";
-}?>
                 </tbody>
             </table>
         </div>

@@ -12,7 +12,7 @@ class UserModel extends Model
     public function __construct()
     {
         $this->db = db_connect();
-        $this->builder = $this->db->table('users u');
+        $this->builder = $this->db->table('users');
     }
 
     // funtion to get rows on the basis of condition
@@ -33,13 +33,13 @@ class UserModel extends Model
         return $builder->get()->getResultArray();
     }
 
-    // function to get fields of rows on the basis of the condition
+    // function to get fields for join rows on the basis of the condition
     public function getFieldsForJoin($column, $otherTable, $cond, $where, $type = null)
     {
         $builder = $this->builder;
         $builder->select($column);
         $builder->where($where);
-        $builder->where('u.deleted_at is NULL');
+        $builder->where('users.deleted_at is NULL');
         if ($type) {
             $builder->join($otherTable, $cond, $type);
         } else {

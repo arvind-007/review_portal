@@ -45,58 +45,58 @@ echo view('dashboard/sidebar/sidebar');
                     <div class="card border-0">
                         <div class="card-body">
                             <div class="row ">
-                                <div class="col-sm-3">
-                                    <h6 class="mb-0">First Name</h6>
+                                <div class="col-sm-2">
+                                    <h6 class="mb-0">First Name </h6>
                                 </div>
-                                <div class="col-9 text-secondary" id="fname">
+                                <div class="col-10 text-secondary" id="fname">
                                     N/A
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-sm-3">
+                                <div class="col-2">
                                     <h6 class="mb-0">Last Name</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary" id=lname>
+                                <div class="col-sm-10 text-secondary" id=lname>
                                     N/A
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-sm-3">
+                                <div class="col-2">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary" id="email">
+                                <div class="col-sm-10 text-secondary" id="email">
                                     N/A
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-sm-3">
+                                <div class="col-2">
                                     <h6 class="mb-0">DOB</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary " id="dob">
+                                <div class="col-sm-10 text-secondary " id="dob">
                                     N/A
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-sm-3">
+                                <div class="col-2">
                                     <h6 class="mb-0">Gender</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary " id="gender">
+                                <div class="col-sm-10 text-secondary " id="gender">
                                     N/A
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-sm-3">
+                                <div class="col-2">
                                     <h6 class="mb-0">Mobile</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary " id="mobile">
+                                <div class="col-sm-10 text-secondary " id="mobile">
                                     N/A
                                 </div>
                             </div>
                             <div class="row my-3">
-                                <div class="col-sm-3">
+                                <div class="col-2">
                                     <h6 class="mb-0">Address</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary " id="address">
+                                <div class="col-sm-10 text-secondary " id="address">
                                     N/A
                                 </div>
                             </div>
@@ -110,42 +110,42 @@ echo view('dashboard/sidebar/sidebar');
                         <div class="card-body">
                             <form method="post" autocomplete="off" id="frm-update" enctype="multipart/form_data">
                                 <div class="row my-3">
-                                    <div class="col-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">First Name</h6>
                                     </div>
-                                    <div class="col-9 text-secondary">
+                                    <div class="col-10 text-secondary">
                                         <input type="text" name="fname" class="form-control" id="i-fname">
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-sm-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">Last Name</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
+                                    <div class="col-sm-10 text-secondary">
                                         <input type="text" name="lname" class="form-control" id="i-lname">
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-sm-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">Email</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" name="email" class="form-control" id="i-email">
+                                    <div class="col-sm-10 text-secondary">
+                                        <input type="text" name="email" class="form-control" disabled id="i-email">
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-sm-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">DOB</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
+                                    <div class="col-sm-10 text-secondary">
                                         <input name="dob" type="date" id="i-dob">
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-sm-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">Gender</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
+                                    <div class="col-sm-10 text-secondary">
                                         <label class="radio-inline me-5"><input type="radio" name="gender"
                                                 value="Male">Male</label>
                                         <label class="radio-inline me-5"><input type="radio" name="gender"
@@ -155,18 +155,19 @@ echo view('dashboard/sidebar/sidebar');
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-sm-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">Mobile</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="number" name="mobile" class="form-control mobile" id="i-mobile">
+                                    <div class="col-sm-10 text-secondary">
+                                        <input type="number" name="mobile" class="form-control mobile" disabled
+                                            id="i-mobile">
                                     </div>
                                 </div>
                                 <div class="row my-3">
-                                    <div class="col-sm-3 m-auto">
+                                    <div class="col-2 m-auto">
                                         <h6 class="mb-0">Address</h6>
                                     </div>
-                                    <div class="col-sm-9 text-secondary">
+                                    <div class="col-sm-10 text-secondary">
                                         <textarea type="text" name="address" class="form-control"
                                             id="i-address"></textarea>
                                     </div>

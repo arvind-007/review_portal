@@ -10,10 +10,7 @@
 ?></strong>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-            <li>
-                <hr class=" dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" id="btn-logout">Sign out</a></li>
+            <li><a href="<?php echo base_url() ?>" class="dropdown-item" id="btn-logout">Sign out</a></li>
         </ul>
     </div>
 </header>

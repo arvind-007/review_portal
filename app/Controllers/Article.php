@@ -17,6 +17,10 @@ class Article extends BaseController
         $data = ["articles" => $amodel->getAll()];
         return view('dashboard/content/articles', $data);
     }
+    public function article()
+    {
+        return view('dashboard/content/add_articles');
+    }
     public function showArticles()
     {
         $amodel = $this->articlemodel;
@@ -35,4 +39,23 @@ class Article extends BaseController
         }
 
     }
+    public function addArticles()
+    {
+        $amodel = $this->articlemodel;
+        $data = [
+            "title" => $this->request->getPost('title'),
+            "tags" => $this->request->getPost('tags'),
+            "category_id" => $this->request->getPost('category'),
+            "body" => $this->request->getPost('textbox'),
+        ];
+        $id = $amodel->insertData($data);
+        echo json_encode(
+            [
+                "status" => 1,
+                "msg" => "successfully insertion",
+            ]
+        );
+
+    }
+
 }

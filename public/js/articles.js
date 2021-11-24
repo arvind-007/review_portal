@@ -1,13 +1,13 @@
-$(function () {
+$(function() {
     ArticlesTable = () => {
         articles = {
             url: BASE_URL + "/article/showArticles",
             dataType: "json",
-            success: function (res) {
+            success: function(res) {
                 if (res.status == 1) {
                     $("#table-articles tbody").html("");
                     let r = 1;
-                    res.articles.map(function (art) {
+                    res.articles.map(function(art) {
                         $("#table-articles tbody").append(`<tr>
                         <th>${r}</th>
                         <td> ${art.title}</td>
@@ -21,11 +21,13 @@ $(function () {
                     });
                 }
             },
-            erre: function (err) {
+            erre: function(err) {
 
             }
         }
         $.ajax(articles);
     }
     ArticlesTable();
+
+
 });

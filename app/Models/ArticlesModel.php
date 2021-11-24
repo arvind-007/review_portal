@@ -12,7 +12,7 @@ class ArticlesModel extends Model
     public function __construct()
     {
         $this->db = db_connect();
-        $this->builder = $this->db->table('articles a');
+        $this->builder = $this->db->table('articles');
     }
 
     // funtion to get rows on the basis of condition

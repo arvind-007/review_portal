@@ -1,3 +1,7 @@
+<?php
+echo view('dashboard/header/header_top');
+echo view('dashboard/sidebar/sidebar');
+?>
 <div id="content" class="bg-light">
     <?php echo view("dashboard/header/header"); ?>
     <section class="content-header px-2 ">
@@ -155,7 +159,7 @@
                                         <h6 class="mb-0">Mobile</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" name="mobile" class="form-control mobile" id="i-mobile">
+                                        <input type="number" name="mobile" class="form-control mobile" id="i-mobile">
                                     </div>
                                 </div>
                                 <div class="row my-3">
@@ -179,4 +183,7 @@
     </section>
 </div>
 <script src="js/profile.js"></script>
-<?php echo view('dashboard/modals/change_pass_modal') ?>
+<?php
+echo view('dashboard/modals/change_pass_modal');
+echo view('dashboard/footer/footer.php');
+?>

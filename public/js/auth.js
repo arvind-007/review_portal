@@ -36,7 +36,7 @@ $(function () {
         }, submitHandler: function (form, event) {
             event.preventDefault();
             let register = {
-                url: BASE_URL + "/home/register",
+                url: BASE_URL + "/auth/register",
                 data: $("#frm-register").serialize(),
                 method: "post",
                 success: function (res) {
@@ -66,7 +66,7 @@ $(function () {
         },
         submitHandler: function (form, event) {
             let login = {
-                url: BASE_URL + "public/home/login",
+                url: BASE_URL + "/auth/login",
                 data: $("#frm-login").serialize(),
                 method: "post",
                 dataType: "json",

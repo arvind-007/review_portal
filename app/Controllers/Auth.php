@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Auth extends BaseController
 {
     public $usermodel;
     public $profilemodel;
@@ -15,12 +15,12 @@ class Home extends BaseController
 
     public function index()
     {
-        echo view('auth/login');
+        return view('auth/login');
     }
 
     public function signUp()
     {
-        echo view('auth/signup');
+        return view('auth/signup');
     }
 
     public function register()

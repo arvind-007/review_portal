@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserModel extends Model
+class ArticlesModel extends Model
 {
     public $db;
     public $builder;
@@ -30,22 +30,6 @@ class UserModel extends Model
         $builder = $this->builder;
         $builder->select("*");
         $builder->where('deleted_at is NULL');
-        return $builder->get()->getResultArray();
-    }
-
-    // function to get fields of rows on the basis of the condition
-    public function getFieldsForJoin($column, $otherTable, $cond, $where, $type = null)
-    {
-        $builder = $this->builder;
-        $builder->select($column);
-        $builder->where($where);
-        $builder->where('u.deleted_at is NULL');
-        if ($type) {
-            $builder->join($otherTable, $cond, $type);
-        } else {
-            $builder->join($otherTable, $cond);
-        }
-
         return $builder->get()->getResultArray();
     }
 

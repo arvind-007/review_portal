@@ -1,7 +1,7 @@
 $(function () {
 
     $("#btn-logout").click(function (event) {
-        window.location = BASE_URL + "public/admin/logOut";
+        window.location = BASE_URL + "auth/logOut";
     });
 
     $("#btn-add").click(function (event) {

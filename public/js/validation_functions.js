@@ -1,7 +1,7 @@
 existEmail = (value) => {
     let result;
     let email = {
-        url: BASE_URL + "/home/emailExist",
+        url: BASE_URL + "/auth/emailExist",
         data: {
             email: value,
         },
@@ -27,7 +27,7 @@ existEmail = (value) => {
 existMobile = (value) => {
     let result;
     let username = {
-        url: BASE_URL + "/home/mobileExist",
+        url: BASE_URL + "/auth/mobileExist",
         data: {
             mobile: value,
         },

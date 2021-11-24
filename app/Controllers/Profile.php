@@ -2,32 +2,23 @@
 
 namespace App\Controllers;
 
-class Dashboard extends BaseController
+class Profile extends BaseController
 {
     public $usermodel;
     public $profilemodel;
+    public $articlemodel;
     public function __construct()
     {
-        $this->usermodel = model('usermodel');
-        $this->profilemodel = model('userprofilemodel');
+        $this->usermodel = model('UserModel');
+        $this->profilemodel = model('UserProfileModel');
         helper('common');
     }
 
     public function index()
     {
-        echo view('dashboard/header/header_top');
-        echo view('dashboard/sidebar/sidebar');
-        echo view('dashboard/content/profile');
-        echo view('dashboard/footer/footer.php');
+        return view('dashboard/content/profile');
     }
 
-    public function articles()
-    {
-        echo view('dashboard/header/header_top');
-        echo view('dashboard/sidebar/sidebar');
-        echo view('dashboard/content/articles');
-        echo view('dashboard/footer/footer.php');
-    }
     public function showProfile()
     {
         $model = $this->usermodel;

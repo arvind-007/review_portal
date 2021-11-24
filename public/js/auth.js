@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     $("#frm-register").validate({
         rules: {
             fname: {
@@ -29,21 +29,23 @@ $(function () {
                 required: true,
                 equalTo: "#password",
             },
-        }, messages: {
+        },
+        messages: {
             cpassword: {
                 equalTo: "Password does not match",
             }
-        }, submitHandler: function (form, event) {
+        },
+        submitHandler: function(form, event) {
             event.preventDefault();
             let register = {
                 url: BASE_URL + "public/home/register",
                 data: $("#frm-register").serialize(),
                 method: "post",
-                success: function (res) {
+                success: function(res) {
                     let result = JSON.parse(res);
                     window.location.reload();
                 },
-                error: function (err) {
+                error: function(err) {
                     console.log(err);
                 }
             }
@@ -51,7 +53,7 @@ $(function () {
         }
     });
 
-    $("#frm-login input").keyup(function () {
+    $("#frm-login input").keyup(function() {
         $("#login-err").hide();
     });
 
@@ -64,14 +66,14 @@ $(function () {
                 required: true,
             },
         },
-        submitHandler: function (form, event) {
+        submitHandler: function(form, event) {
             let login = {
-                url: BASE_URL + "public/home/login",
+                url: "http://localhost/review_portal/app/Controllers/Home.php/login ",
                 data: $("#frm-login").serialize(),
                 method: "post",
                 dataType: "json",
-                success: function (res) {
-                    if (res.status == 1) {
+                success: function(res) {
+                    if (res.status == "success") {
                         $("#login-err").hide();
                         window.location.reload();
                     } else {
@@ -79,7 +81,7 @@ $(function () {
                         $("#login-err").show();
                     }
                 },
-                error: function (err) {
+                error: function(err) {
                     console.log(err);
                 }
             }
@@ -87,9 +89,3 @@ $(function () {
         }
     });
 });
-
-
-
-
-
-

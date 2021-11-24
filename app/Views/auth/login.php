@@ -1,4 +1,4 @@
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@ echo $url->baseURL;?>";
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <?php if (isset($_SESSION['user_details']) && $_SESSION['user_details']['uid']) {?>
-    <script src="js/roles.js"></script>
+
     <?php } else {?>
 </head>
 
@@ -41,7 +41,8 @@ echo $url->baseURL;?>";
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-black-50 mb-5">Please enter your login and password!</p>
                                 <div class="alert alert-danger" id="login-err" style="display: none;"></div>
-                                <form method="post" autocomplete="off" id="frm-login">
+                                <form action="<?php echo base_url('/Home/login');?>" method="post" autocomplete="off"
+                                    id="frm-login">
                                     <div class="form-outline mb-2 inputvalues" style="text-align:left">
                                         <label class="form-label">Email/Mobile</label>
                                         <input type="text" name="email" class="form-control" />

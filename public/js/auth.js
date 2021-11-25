@@ -44,9 +44,9 @@ $(function () {
         url: BASE_URL + "/auth/register",
         data: $("#frm-register").serialize(),
         method: "post",
+        dataType: "json",
         success: function (res) {
-          let result = JSON.parse(res);
-          // window.location.reload();
+          window.location = BASE_URL;
         },
         error: function (err) {
           console.log(err);

@@ -6,12 +6,13 @@ class Article extends BaseController
 {
     public $articlemodel;
     public $categoriesmodel;
+    public $session;
     public function __construct()
     {
         $this->session = \Config\Services::session();
         $this->session->start();
-        if(!$this->session->get("is_login")){
-            header("Location:".base_url());
+        if (!$this->session->get("is_login")) {
+            header("Location:" . base_url());
             exit;
         }
 
@@ -23,7 +24,10 @@ class Article extends BaseController
     public function index()
     {
         $cmodel = $this->categoriesmodel;
-        $data = ["categories" => $cmodel->getAll()];
+        $data = [
+            "categories" => $cmodel->getAll(),
+            "session" => $this->session,
+        ];
         return view('dashboard/content/articles', $data);
     }
     public function article()
@@ -57,7 +61,7 @@ class Article extends BaseController
             "category_id" => $this->request->getPost('category'),
             "body" => $this->request->getPost('body'),
             'created_at' => date('d-m-Y'),
-            'updated_at' => date('d-m-Y')
+            'updated_at' => date('d-m-Y'),
         ];
         $id = $amodel->insertData($data);
         echo json_encode(
@@ -88,8 +92,8 @@ class Article extends BaseController
             "title" => $this->request->getPost('title'),
             "tags" => $this->request->getPost('tags'),
             "category_id" => $this->request->getPost('category'),
-            "body" => $this->request->getPost('textbox'),
-            'updated_at' => date('d/m/Y')
+            "body" => $this->request->getPost('body'),
+            'updated_at' => date('d/m/Y'),
         ];
         $amodel->updateRow($data, "id = '$id'");
         echo json_encode([

@@ -58,7 +58,7 @@ echo $url->baseURL;?>";
                             </div>
 
                             <div>
-                                <p class="mb-0">Don't have an account? <a href="home/signUp"
+                                <p class="mb-0">Don't have an account? <a href="<?php echo base_url('auth/signup') ?>"
                                         class="text-50 fw-bold">Register Here</a></p>
                             </div>
 

@@ -69,6 +69,7 @@ class UserModel extends Model
 
     public function login($uname, $pwd)
     {
+        $pwd = md5($pwd);
         $this->builder->where("email", $uname);
         $this->builder->where("password", $pwd);
 
@@ -79,6 +80,5 @@ class UserModel extends Model
             return false;
         }
     }
-
 
 }

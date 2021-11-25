@@ -32,9 +32,7 @@ echo view('dashboard/sidebar/sidebar');
                                     style="display:none"></a>
                                 <div class=" mt-3">
                                     <h4 class="mb-3">
-                                        <?php
-// echo $_SESSION['user_details']['fname'] . " " . $_SESSION['user_details']['lname'];
-?>
+                                        <?php echo $session->get('user_details')['name']; ?>
                                     </h4>
                                 </div>
                             </div>

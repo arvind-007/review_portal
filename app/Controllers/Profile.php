@@ -7,13 +7,13 @@ class Profile extends BaseController
     public $usermodel;
     public $profilemodel;
     public $articlemodel;
+    public $session;
     public function __construct()
     {
-
         $this->session = \Config\Services::session();
         $this->session->start();
-        if(!$this->session->get("is_login")){
-            header("Location:".base_url());
+        if (!$this->session->get("is_login")) {
+            header("Location:" . base_url());
             exit;
         }
 
@@ -24,14 +24,14 @@ class Profile extends BaseController
 
     public function index()
     {
-        return view('dashboard/content/profile');
+
+        return view('dashboard/content/profile', ["session" => $this->session]);
     }
 
     public function showProfile()
     {
         $model = $this->usermodel;
-        // $id = $_SESSION['user_details']['uid'];
-        $id = 11;
+        $id = $this->session->get('user_details')['id'];
         $user = $model->getFieldsForJoin('users.mobile,users.email,up.first_name,up.last_name,up.dob,up.gender,up.address,up.profile_photo', 'users_profile up', 'users.id=up.user_id', "users.id=$id", 'left');
         echo json_encode([
             "status" => 1,
@@ -45,8 +45,7 @@ class Profile extends BaseController
 
         $model = $this->usermodel;
         $pmodel = $this->profilemodel;
-        // $id = $_SESSION['user_details']['uid'];
-        $id = 11;
+        $id = $this->session->get('user_details')['id'];
         $img_name = $pmodel->getFields('users_profile.profile_photo', "user_id='$id'")[0];
         if (isset($_FILES['profile']) && $_FILES['profile']['name']) {
             $photo = $_FILES['profile'];
@@ -75,11 +74,12 @@ class Profile extends BaseController
             'updated_at' => date("d/m/Y"),
         ];
         $pmodel->updateRow($data, "user_id=$id");
-        $_SESSION['user_details'] = [
-            "uid" => $id,
-            "fname" => $this->request->getPost('fname'),
-            "lname" => $this->request->getPost('lname'),
+        $user_detail = [
+            "id" => $id,
+            "name" => $this->request->getPost('fname') . " " . $this->request->getPost('lname'),
+            "photo" => $img_name,
         ];
+        $this->session->set("user_details", $user_detail);
         echo json_encode([
             "status" => 1,
         ]);
@@ -87,9 +87,8 @@ class Profile extends BaseController
 
     public function changePass()
     {
-        // $id = $_SESSION['user_details']['uid'];
+        $id = $this->session->get('user_details')['id'];
         $model = $this->usermodel;
-        $id = 11;
         $password = md5($this->request->getPost('password'));
         $exist = $model->get("password = '$password' AND id='$id'");
         if ($exist) {

@@ -9,6 +9,14 @@ class Profile extends BaseController
     public $articlemodel;
     public function __construct()
     {
+
+        $this->session = \Config\Services::session();
+        $this->session->start();
+        if(!$this->session->get("is_login")){
+            header("Location:".base_url());
+            exit;
+        }
+
         $this->usermodel = model('UserModel');
         $this->profilemodel = model('UserProfileModel');
         helper('common');

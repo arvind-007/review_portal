@@ -8,6 +8,13 @@ class Article extends BaseController
     public $categoriesmodel;
     public function __construct()
     {
+        $this->session = \Config\Services::session();
+        $this->session->start();
+        if(!$this->session->get("is_login")){
+            header("Location:".base_url());
+            exit;
+        }
+
         $this->articlemodel = model('ArticlesModel');
         $this->categoriesmodel = model('CategoriesModel');
         helper('common');
@@ -40,11 +47,26 @@ class Article extends BaseController
             ]);
         }
     }
-<<<<<<< HEAD
+
     public function addArticles()
     {
         $amodel = $this->articlemodel;
-=======
+        $data = [
+            "title" => $this->request->getPost('title'),
+            "tags" => $this->request->getPost('tags'),
+            "category_id" => $this->request->getPost('category'),
+            "body" => $this->request->getPost('body'),
+            'created_at' => date('d-m-Y'),
+            'updated_at' => date('d-m-Y')
+        ];
+        $id = $amodel->insertData($data);
+        echo json_encode(
+            [
+                "status" => 1,
+                "msg" => "successfully insertion",
+            ]
+        );
+    }
     public function showArticleData()
     {
         $amodel = $this->articlemodel;
@@ -62,25 +84,12 @@ class Article extends BaseController
     {
         $amodel = $this->articlemodel;
         $id = $this->request->getPost('id');
->>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd
         $data = [
             "title" => $this->request->getPost('title'),
             "tags" => $this->request->getPost('tags'),
             "category_id" => $this->request->getPost('category'),
-<<<<<<< HEAD
             "body" => $this->request->getPost('textbox'),
-        ];
-        $id = $amodel->insertData($data);
-        echo json_encode(
-            [
-                "status" => 1,
-                "msg" => "successfully insertion",
-            ]
-        );
-
-=======
-            "body" => $this->request->getPost('body'),
-            'updated_at' => date('d/m/Y'),
+            'updated_at' => date('d/m/Y')
         ];
         $amodel->updateRow($data, "id = '$id'");
         echo json_encode([
@@ -97,7 +106,6 @@ class Article extends BaseController
             "status" => 1,
             "msg" => "article Deleted succesfully",
         ]);
->>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd
     }
 
 }

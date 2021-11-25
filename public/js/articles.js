@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 $(function() {
-    ArticlesTable = () => {
-=======
-$(function () {
     articlesTable = () => {
->>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd
         articles = {
             url: BASE_URL + "/article/showArticles",
             dataType: "json",
@@ -32,20 +27,15 @@ $(function () {
         }
         $.ajax(articles);
     }
-<<<<<<< HEAD
-    ArticlesTable();
-
-
-=======
     articlesTable();
 
-    $(document).on('click', '#btn-dlt', function () {
+    $(document).on('click', '#btn-dlt', function() {
         let id = $(this).attr('uid');
         $('#mdl-delete').modal('show');
         $('#delete-id').val(id);
     })
 
-    $(document).on('click', '#btn-edit', function () {
+    $(document).on('click', '#btn-edit', function() {
         $('#sec-table').hide();
         $('#btn-add-article').hide();
         $('#btn-backtotable').show();
@@ -58,7 +48,7 @@ $(function () {
             },
             method: "post",
             dataType: "json",
-            success: function (res) {
+            success: function(res) {
                 let a = res.articles[0].category_id;
                 let b = res.articles[0].body;
                 $("#title").val(res.articles[0].title);
@@ -67,14 +57,14 @@ $(function () {
                 $("#art-body").val(res.articles[0].body);
                 $("#uid").val(id);
             },
-            error: function (err) {
+            error: function(err) {
                 console.log(err);
             }
         }
         $.ajax(showdata);
     });
 
-    $("#btn-backtotable").click(function () {
+    $("#btn-backtotable").click(function() {
         window.location.reload();
     });
 
@@ -95,21 +85,23 @@ $(function () {
                 required: true,
                 minlength: 100,
             },
-        }, messages: {
+        },
+        messages: {
             // message
-        }, submitHandler: function (form, event) {
+        },
+        submitHandler: function(form, event) {
             event.preventDefault();
             let edit = {
                 url: BASE_URL + "/article/updatearticle",
                 data: $(form).serialize(),
                 method: "post",
                 dataType: "json",
-                success: function (res) {
+                success: function(res) {
                     if (res.status == 1) {
                         window.location.reload();
                     }
                 },
-                error: function (err) {
+                error: function(err) {
                     // console.log(err);
                 }
             }
@@ -117,29 +109,28 @@ $(function () {
         }
     });
 
-    $("#frm-delete").submit(function () {
+    $("#frm-delete").submit(function() {
         let dlt = {
             url: BASE_URL + "/article/deleteArticle",
             method: "post",
             dataType: "json",
             data: $("#frm-delete").serialize(),
-            success: function (res) {
+            success: function(res) {
                 $("#mdl-delete").modal('hide');
                 $('.modal-backdrop').remove();
                 if (res.status == 1) {
                     $("#success-msg").html(res.msg);
                     $("#success-msg").show();
                     articlesTable();
-                    setTimeout(function () {
+                    setTimeout(function() {
                         $("#success-msg").hide();
                     }, 3000)
                 }
             },
-            error: function (err) {
+            error: function(err) {
 
             }
         };
         $.ajax(dlt);
     })
->>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd
 });

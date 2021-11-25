@@ -1,17 +1,5 @@
-<<<<<<< HEAD
-#success-msg {
-    color: black;
-    font-size: 30px;
-    text-align: center;
-}
-
 .w-40 {
     width: 40%;
-=======
-
-.w-40{
-    width : 40%;
->>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd
 }
 
 .circle {
@@ -54,12 +42,6 @@ a {
     resize: none;
 }
 
-<<<<<<< HEAD
 .error {
     color: red;
 }
-=======
-.error{
-    color: red;
-}
->>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd

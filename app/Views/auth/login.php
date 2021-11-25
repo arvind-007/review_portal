@@ -23,9 +23,6 @@ echo $url->baseURL;?>";
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <?php if (isset($_SESSION['user_details']) && $_SESSION['user_details']['uid']) {?>
-
-    <?php } else {?>
 </head>
 
 <body class="bg-light">
@@ -44,7 +41,7 @@ echo $url->baseURL;?>";
                                 <form method="post" autocomplete="off" id="frm-login">
                                     <div class="form-outline mb-2 inputvalues" style="text-align:left">
                                         <label class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control" />
+                                        <input type="text" name="email" class="form-control" />
                                     </div>
 
                                     <div class="form-outline form-white mb-2 inputvalues" style="text-align:left">
@@ -81,4 +78,3 @@ echo $url->baseURL;?>";
 </body>
 
 </html>
-<?php }?>

@@ -41,5 +41,16 @@ class UserProfileModel extends Model
         $builder->where($where);
         $builder->update();
     }
+    public function getUserProfile($id)
+    {
+        $this->builder->where("user_id", $id);
+
+        $result = $this->builder->get()->getRow();
+        if ($result) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
 
 }

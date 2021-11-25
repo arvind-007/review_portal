@@ -12,18 +12,17 @@ class Auth extends BaseController
         $this->usermodel = model('usermodel');
         $this->profilemodel = model('userprofilemodel');
         helper('common');
-        
+
         $this->session = \Config\Services::session();
         $this->session->start();
 
         $uri = service('uri');
 
-        if($this->session->get("is_login") && !($uri->getTotalSegments() > 1 && $uri->getSegment(2) == 'logout')){
-            header("Location:".base_url("profile"));
+        if ($this->session->get("is_login") && !($uri->getTotalSegments() > 1 && $uri->getSegment(2) == 'logout')) {
+            header("Location:" . base_url("profile"));
             exit;
         }
     }
-
 
     //Default function login
     public function index()
@@ -31,7 +30,6 @@ class Auth extends BaseController
         return view('auth/login');
     }
 
-    
     //Ajax function for login
     public function login()
     {
@@ -41,19 +39,18 @@ class Auth extends BaseController
             $password = $this->request->getPost('password');
 
             $user = $model->login($email, $password); // Login method you have to create
-
             if ($user) {
                 $profile = $this->profilemodel->getUserProfile($user->id);
                 //prd($profile);
                 $user_detail = [
-                    "id" =>  $user->id,
-                    "name" => $profile->first_name." ".$profile->last_name,
-                    "photo" => $profile->profile_photo
+                    "id" => $user->id,
+                    "name" => $profile->first_name . " " . $profile->last_name,
+                    "photo" => $profile->profile_photo,
                 ];
 
                 $this->session->set("is_login", 1);
                 $this->session->set("user_details", $user_detail);
-                
+
                 echo json_encode([
                     'status' => 1,
                     'message' => 'Login success',
@@ -140,21 +137,22 @@ class Auth extends BaseController
         }
     }
 
-    
-    function forget_password(){
+    public function forget_password()
+    {
         view("forget_password");
     }
 
-    function send_recovery_email(){
+    public function send_recovery_email()
+    {
 
     }
 
-
-    function logout(){
+    public function logout()
+    {
         $this->session->set("is_login", 0);
         $this->session->set("user_details", []);
 
-        header("Location:".base_url());
+        header("Location:" . base_url());
         exit;
     }
 }

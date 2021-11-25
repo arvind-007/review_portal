@@ -73,9 +73,9 @@ class UserModel extends Model
         $this->builder->where("email", $uname);
         $this->builder->where("password", $pwd);
 
-        $result = $this->builder->get()->getResultArray();
-        if (count($result) > 0) {
-            return true;
+        $result = $this->builder->get()->getRow();
+        if ($result) {
+            return $result;
         } else {
             return false;
         }

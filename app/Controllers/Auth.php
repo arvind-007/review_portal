@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 class Auth extends BaseController
 {
+    public $session;
     public $usermodel;
     public $profilemodel;
     public function __construct()
@@ -11,14 +12,64 @@ class Auth extends BaseController
         $this->usermodel = model('usermodel');
         $this->profilemodel = model('userprofilemodel');
         helper('common');
+        
+        $this->session = \Config\Services::session();
+        $this->session->start();
+
+        $uri = service('uri');
+
+        if($this->session->get("is_login") && !($uri->getTotalSegments() > 1 && $uri->getSegment(2) == 'logout')){
+            header("Location:".base_url("profile"));
+            exit;
+        }
     }
 
+
+    //Default function login
     public function index()
     {
         return view('auth/login');
     }
 
-    public function signUp()
+    
+    //Ajax function for login
+    public function login()
+    {
+        $model = $this->usermodel;
+        if ($this->request->isAJAX()) {
+            $email = $this->request->getPost('email');
+            $password = $this->request->getPost('password');
+
+            $user = $model->login($email, $password); // Login method you have to create
+
+            if ($user) {
+                $profile = $this->profilemodel->getUserProfile($user->id);
+                //prd($profile);
+                $user_detail = [
+                    "id" =>  $user->id,
+                    "name" => $profile->first_name." ".$profile->last_name,
+                    "photo" => $profile->profile_photo
+                ];
+
+                $this->session->set("is_login", 1);
+                $this->session->set("user_details", $user_detail);
+                
+                echo json_encode([
+                    'status' => 1,
+                    'message' => 'Login success',
+                ]);
+            } else {
+                echo json_encode([
+                    'status' => 0,
+                    'message' => 'Login failed',
+                ]);
+            }
+        } else {
+            die("Invalid request");
+        }
+    }
+
+    public function signup()
     {
         return view('auth/signup');
     }
@@ -89,28 +140,21 @@ class Auth extends BaseController
         }
     }
 
-    public function login()
-    {
-        $model = $this->usermodel;
-        if ($this->request->isAJAX()) {
-            $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password');
+    
+    function forget_password(){
+        view("forget_password");
+    }
 
-            $result = $model->login($email, $password); // Login method you have to create
+    function send_recovery_email(){
 
-            if ($result) {
-                echo json_encode([
-                    'status' => 1,
-                    'message' => 'Login success',
-                ]);
-            } else {
-                echo json_encode([
-                    'status' => 0,
-                    'message' => 'Login failed',
-                ]);
-            }
-        } else {
-            die("Invalid request");
-        }
+    }
+
+
+    function logout(){
+        $this->session->set("is_login", 0);
+        $this->session->set("user_details", []);
+
+        header("Location:".base_url());
+        exit;
     }
 }

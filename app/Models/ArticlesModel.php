@@ -82,6 +82,9 @@ class ArticlesModel extends Model
         $builder->update();
     }
 
+<<<<<<< HEAD
+}
+=======
     public function deleteRow($id)
     {
         $builder = $this->builder;
@@ -91,3 +94,4 @@ class ArticlesModel extends Model
     }
 
 }
+>>>>>>> e06db4f461fabce4c891e96dcff9aea433ae0fcd

@@ -40,7 +40,7 @@ echo $url->baseURL;?>";
                                 <div class="alert alert-danger" id="login-err" style="display: none;"></div>
                                 <form method="post" autocomplete="off" id="frm-login">
                                     <div class="form-outline mb-2 inputvalues" style="text-align:left">
-                                        <label class="form-label">Email</label>
+                                        <label class="form-label">Email/Phone no.</label>
                                         <input type="text" name="email" class="form-control" />
                                     </div>
 

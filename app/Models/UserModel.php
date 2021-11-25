@@ -70,7 +70,7 @@ class UserModel extends Model
     public function login($uname, $pwd)
     {
         $pwd = md5($pwd);
-        $this->builder->where("email", $uname);
+        $this->builder->where("email='$uname' || mobile='$uname'");
         $this->builder->where("password", $pwd);
 
         $result = $this->builder->get()->getRow();

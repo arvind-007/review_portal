@@ -23,7 +23,7 @@ class UserProfileModel extends Model
         $builder->select($column);
         $builder->where($where);
         $builder->where('deleted_at is NULL');
-        return $builder->get()->getResultArray();
+        return $builder->get()->getRowArray();
     }
 
     //function to insert data in the table

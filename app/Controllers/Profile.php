@@ -8,6 +8,7 @@ class Profile extends BaseController
     public $profilemodel;
     public $articlemodel;
     public $session;
+    public $encrypter;
     public function __construct()
     {
         $this->session = \Config\Services::session();
@@ -16,7 +17,7 @@ class Profile extends BaseController
             header("Location:" . base_url());
             exit;
         }
-
+        $this->encrypter = \config\Services::encrypter();
         $this->usermodel = model('UserModel');
         $this->profilemodel = model('UserProfileModel');
         helper('common');
@@ -46,7 +47,7 @@ class Profile extends BaseController
         $model = $this->usermodel;
         $pmodel = $this->profilemodel;
         $id = $this->session->get('user_details')['id'];
-        $img_name = $pmodel->getFields('users_profile.profile_photo', "user_id='$id'")[0];
+        $img_name = $pmodel->getFields('users_profile.profile_photo', "user_id='$id'")['profile_photo'];
         if (isset($_FILES['profile']) && $_FILES['profile']['name']) {
             $photo = $_FILES['profile'];
             $img = explode('.', $photo['name']);

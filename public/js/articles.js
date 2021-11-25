@@ -4,8 +4,8 @@ $(function () {
             url: BASE_URL + "/article/showArticles",
             dataType: "json",
             success: function (res) {
+                $("#table-articles tbody").html("");
                 if (res.status == 1) {
-                    $("#table-articles tbody").html("");
                     let r = 1;
                     res.articles.map(function (art) {
                         $("#table-articles tbody").append(`<tr>

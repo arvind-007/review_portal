@@ -27,7 +27,8 @@ echo view('dashboard/sidebar/sidebar');
                     <div class="card border-0  h-100">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="uploaded_img/avatar7.png" alt="Admin" class="circle" id="profile-photo">
+                                <img src="<?php echo base_url('uploaded_img/avatar7.png') ?>" alt="Admin" class="circle"
+                                    id="profile-photo">
                                 <a class="h3 fa fa-camera cursor-pointer text-dark" id="change-photo"
                                     style="display:none"></a>
                                 <div class=" mt-3">
@@ -181,7 +182,7 @@ echo view('dashboard/sidebar/sidebar');
         </div><!-- /.container-fluid -->
     </section>
 </div>
-<script src="js/profile.js"></script>
+<script src="<?php echo base_url('js/profile.js') ?>"></script>
 <?php
 echo view('dashboard/modals/change_pass_modal');
 echo view('dashboard/footer/footer.php');

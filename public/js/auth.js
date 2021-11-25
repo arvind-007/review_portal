@@ -41,7 +41,7 @@ $(function () {
     submitHandler: function (form, event) {
       event.preventDefault();
       let register = {
-        url: BASE_URL + "/auth/register",
+        url: base_url('auth/register'),
         data: $("#frm-register").serialize(),
         method: "post",
         dataType: "json",

@@ -117,7 +117,7 @@ for ($i = 0; $i < count($categories); $i++) {
         </div>
     </section>
 </div>
-<script src="<?php echo base_url() ?>/js/articles.js"></script>
+<script src="<?php echo base_url('js/articles.js') ?>"></script>
 <?php
 echo view('dashboard/modals/delete_modal');
 echo view('dashboard/footer/footer');

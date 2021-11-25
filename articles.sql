@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2021 at 05:12 AM
+-- Generation Time: Nov 25, 2021 at 11:21 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -31,10 +31,10 @@ USE `articles`;
 
 CREATE TABLE `articles` (
   `id` int(11) UNSIGNED NOT NULL,
-  `category_id` int(11) NOT NULL,
+  `category_id` int(11) UNSIGNED NOT NULL,
   `title` varchar(40) NOT NULL,
   `tags` varchar(40) NOT NULL,
-  `body` varchar(255) NOT NULL,
+  `body` text NOT NULL,
   `created_at` varchar(20) DEFAULT NULL,
   `deleted_at` varchar(20) DEFAULT NULL,
   `updated_at` varchar(20) DEFAULT NULL
@@ -45,8 +45,8 @@ CREATE TABLE `articles` (
 --
 
 INSERT INTO `articles` (`id`, `category_id`, `title`, `tags`, `body`, `created_at`, `deleted_at`, `updated_at`) VALUES
-(1, 1, 'my article', 'abc,mdfamasdfm,asdf,assaf,asdf,,asf', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, deleniti architecto iusto aliquid quam possimus dolore voluptate! Ad ab consectetur tempore at quasi tempora corporis debitis temporibus labore rerum, repellat, nihil natus dolorem, duc', NULL, NULL, NULL),
-(2, 2, 'my article2', 'asdf,asdf,asdf,,asdf,,asdf,,asdf,,asdf', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, deleniti architecto iusto aliquid quam possimus dolore voluptate! Ad ab consectetur tempore at quasi tempora corporis debitis temporibus labore rerum, repellat, nihil natus dolorem, duc', NULL, NULL, NULL);
+(1, 1, 'my article', 'abc,mdfamasdfm,asdf,assaf,asdf,,asf', ' consectetur adipisicing elit. Error a, suscipit, velit ipsa omnis nulla sed praesentium pariatur ipsam enim eveniet. Accusantium quas tempora quo! Odit reiciendis, nostrum consequuntur enim eum quod ducimus provident vitae facere omnis voluptatum vero fuga natus in expedita! Aliquid aperiam iusto sint labore repellendus officiis consequatur, quos, debitis officia architecto temporibus, sunt commodi saepe culpa illum distinctio incidunt impedit voluptas? Quibusdam, quos. Odio consectetur laborum dolorum illo inventore molestias suscipit natus error tempora praesentium voluptatem hic quis deleniti officiis pariatur exercitationem, perspiciatis voluptate quaerat iure perferendis odit minus harum nulla. Cum laboriosam perspiciatis omnis cupiditate impedit corporis id velit odit quod, dolor molestiae similique soluta sed voluptates, in at hic distinctio sapiente totam, maiores dolore placeat! Alias, consequatur. Consectetur culpa quaerat laborum repellendus quas dolores porro dolor, deserunt officiis ipsum sequi veritatis, inventore facere ducimus facilis, necessitatibus minus ad autem odio beatae possimus nulla laboriosam. Rerum eum unde error quae illo facilis quaerat, consequuntur temporibus quod tenetur dolore amet, repudiandae quia enim, nisi voluptate aut minus. Debitis, laudantium voluptatem culpa animi illo accusamus deleniti tempore eos rerum facilis rem!\n', '23/11/2021', NULL, '25/11/2021'),
+(2, 2, 'my article2', 'asdf,asdf,asdf,,asdf,,asdf,,asdf,,asdf', 'asdkfjasdlfjalsdjflasjdlfjasldfjlkajflkasjflasjflasjfljaslkfjlkajflkasjdfjaslkfjaslkfjasjflksdjflkasjflksajfasdjflasjlfjasdlkfjaslkfjaslkjflasjfjlkasdjflksjflkasjdflksjfljasjflkasdjflkasdjfasjflkasjdflksjflkjaslf', '23/11/2021', NULL, '25/11/2021');
 
 -- --------------------------------------------------------
 
@@ -88,12 +88,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `mobile`, `email`, `password`, `created_at`, `deleted_at`, `updated_at`) VALUES
-(1, 'Patodiya', 'Manish', '123456', NULL, NULL, NULL),
-(2, 'Patodiya', 'Manish', '123456', NULL, NULL, NULL),
-(3, '9602065385', 'manish@gmail.co', '123456', NULL, NULL, NULL),
-(4, '9602065385', 'manish@gmail.co', 'e10adc3949ba59abbe56', NULL, NULL, NULL),
-(5, '', '', '', '23/11/2021', NULL, '23/11/2021'),
-(6, '9602065383', 'manish@gmail.con', 'ed54ae97e472d89f0227cba22158731a', '23/11/2021', NULL, '23/11/2021');
+(1, '9602065385', 'manish@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '25/11/2021', NULL, '25/11/2021'),
+(2, '6376893673', 'deepak@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '25/11/2021', NULL, '25/11/2021'),
+(3, '6376856954', 'rahul@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '25/11/2021', NULL, '25/11/2021'),
+(4, '7124585652', 'ravi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '25/11/2021', NULL, '25/11/2021');
 
 -- --------------------------------------------------------
 
@@ -120,11 +118,10 @@ CREATE TABLE `users_profile` (
 --
 
 INSERT INTO `users_profile` (`id`, `user_id`, `first_name`, `last_name`, `gender`, `dob`, `address`, `profile_photo`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 2, 'Manish', 'Manish', '', '', '', '', NULL, NULL, NULL),
-(2, 3, 'Manish', 'Patodiya', '', '', '', '', NULL, NULL, NULL),
-(3, 5, 'Manish', 'Patodiya', '', '', '', '', NULL, NULL, NULL),
-(4, 0, '', '', '', '', '', '', '23/11/2021', '23/11/2021', NULL),
-(5, 6, 'Manish', 'Patodiyaaa', '', '2021-11-09', 'Bawari gate, nawalgarhaa\r\n', 'd02b867868c3872e637ffde1b1588c00.jpg', '23/11/2021', '23/11/2021', NULL);
+(1, 1, 'Manish', 'Patodiya', 'Male', '2021-11-09', 'Bawari gate,nawalgarh', '21b0aed008dd365cc213326d1c1aebef.jpg', '25/11/2021', '25/11/2021', NULL),
+(2, 2, 'deepak', 'saini', '', '', '', '', '25/11/2021', '25/11/2021', NULL),
+(3, 3, 'rahul', 'singh', 'Male', '2021-11-02', 'adfadsf', '3bc1cc85e9fa93e609e7c85dfec94689.jpg', '25/11/2021', '25/11/2021', NULL),
+(4, 4, 'ravi', 'sharma', '', '', '', '', '25/11/2021', '25/11/2021', NULL);
 
 --
 -- Indexes for dumped tables
@@ -134,7 +131,8 @@ INSERT INTO `users_profile` (`id`, `user_id`, `first_name`, `last_name`, `gender
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_category_id` (`category_id`);
 
 --
 -- Indexes for table `categories`
@@ -146,13 +144,16 @@ ALTER TABLE `categories`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `mobile` (`mobile`);
 
 --
 -- Indexes for table `users_profile`
 --
 ALTER TABLE `users_profile`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -174,13 +175,29 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users_profile`
 --
 ALTER TABLE `users_profile`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `articles`
+--
+ALTER TABLE `articles`
+  ADD CONSTRAINT `fk_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`);
+
+--
+-- Constraints for table `users_profile`
+--
+ALTER TABLE `users_profile`
+  ADD CONSTRAINT `fk_user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

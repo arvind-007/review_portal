@@ -51,12 +51,12 @@ class Profile extends BaseController
             $img_name = md5($name . time()) . "." . $ext;
             move_uploaded_file($tmp_name, "uploaded_img/" . $img_name);
         }
-        $data = [
-            'mobile' => $this->request->getPost('mobile'),
-            'email' => $this->request->getPost('email'),
-            'updated_at' => date("d/m/Y"),
-        ];
-        $model->updateRow($data, "id=$id");
+        // $data = [
+        //     'mobile' => $this->request->getPost('mobile'),
+        //     'email' => $this->request->getPost('email'),
+        //     'updated_at' => date("d/m/Y"),
+        // ];
+        // $model->updateRow($data, "id=$id");
         $data = [
             'first_name' => $this->request->getPost('fname'),
             'last_name' => $this->request->getPost('lname'),

@@ -12,13 +12,13 @@ echo view('dashboard/sidebar/sidebar');
                 </div>
                 <div class="col-sm-6 text-end">
                     <a class="btn btn-outline-dark" id="btn-add-article">Add</a>
-                    <a class="btn btn-outline-dark" id="btn-backtotable" style="display:none">back</a>
+                    <a class="btn btn-outline-dark" id="btn-backtotable" style="display:none">Back</a>
                 </div>
             </div>
         </div>
     </section>
     <div class="alert alert-success" style="display:none" id="success-msg"></div>
-    <section style="display:one" id="sec-table">
+    <section style="display:block" id="sec-table">
         <div class="container-fluid">
             <div class="row m-2 rounded">
                 <div class="card border-0  h-100">
@@ -70,6 +70,48 @@ for ($i = 0; $i < count($categories); $i++) {
                         <input type="hidden" name="id" id="uid">
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="display:none" id="sec-view">
+        <div class="container-fluid">
+            <div class="row m-2 rounded">
+                <div class="card border-0  h-100">
+
+                    <div class="row my-1">
+                        <div class="col-sm-2">
+                            <h6 class="mb-0">Title</h6>
+                        </div>
+                        <div class="col-sm-10 text-secondary" id="view-title">
+                            N/A
+                        </div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2">
+                            <h6 class="mb-0">Tags</h6>
+                        </div>
+                        <div class="col-sm-10 text-secondary" id='view-tags'>
+                            N/A
+                        </div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2">
+                            <h6 class="mb-0">Category</h6>
+                        </div>
+                        <div class="col-sm-10 text-secondary" id='view-category'>
+                            N/A
+                        </div>
+                    </div>
+                    <div class="row my-1">
+                        <div class="col-sm-2">
+                            <h6 class="mb-0">Body</h6>
+                        </div>
+                        <div class="col-sm-10 text-secondary" id='view-body'>
+                            N/A
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

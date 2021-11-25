@@ -35,6 +35,32 @@ $(function () {
         $('#delete-id').val(id);
     })
 
+    $(document).on('click', '#btn-view', function () {
+        $('#sec-table').hide();
+        $('#btn-add-article').hide();
+        $('#btn-backtotable').show();
+        $('#sec-view').show();
+        let id = $(this).attr('uid');
+        let showdata = {
+            url: BASE_URL + "article/showArticleData",
+            data: {
+                "id": id,
+            },
+            method: "post",
+            dataType: "json",
+            success: function (res) {
+                $("#view-title").html(res.articles[0].title);
+                $("#view-tags").html(res.articles[0].tags);
+                $("#view-category").html(res.articles[0].category);
+                $("#view-body").html(res.articles[0].body);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        }
+        $.ajax(showdata);
+    })
+
     $(document).on('click', '#btn-edit', function () {
         $('#sec-table').hide();
         $('#btn-add-article').hide();
@@ -42,15 +68,13 @@ $(function () {
         $('#sec-edit').show();
         let id = $(this).attr('uid');
         let showdata = {
-            url: BASE_URL + "/article/showArticleData",
+            url: BASE_URL + "article/showArticleData",
             data: {
                 "id": id,
             },
             method: "post",
             dataType: "json",
             success: function (res) {
-                let a = res.articles[0].category_id;
-                let b = res.articles[0].body;
                 $("#title").val(res.articles[0].title);
                 $("#tags").val(res.articles[0].tags);
                 $("#category option[value=" + res.articles[0].category_id + "]").prop('selected', true);

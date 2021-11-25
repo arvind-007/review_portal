@@ -40,7 +40,7 @@ class Article extends BaseController
     {
         $amodel = $this->articlemodel;
         $id = $this->request->getPost('id');
-        $articles = $amodel->getFields("category_id,title,tags,body", "id = '$id'");
+        $articles = $amodel->getFieldsForJoin("category_id,title,tags,body,category", "categories c", "category_id = c.id", "articles.id = '$id'");
         if ($articles) {
             echo json_encode([
                 "status" => 1,

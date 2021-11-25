@@ -49,6 +49,22 @@ class ArticlesModel extends Model
         return $builder->get()->getResultArray();
     }
 
+    // function to get fields for join all rows
+    public function getFieldsForJoin($column, $otherTable, $cond, $where, $type = null)
+    {
+        $builder = $this->builder;
+        $builder->select($column);
+        $builder->where('deleted_at is NULL');
+        $builder->where($where);
+        if ($type) {
+            $builder->join($otherTable, $cond, $type);
+        } else {
+            $builder->join($otherTable, $cond);
+        }
+
+        return $builder->get()->getResultArray();
+    }
+
     // function to insert data in the table
     public function insertData($data)
     {

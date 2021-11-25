@@ -50,8 +50,8 @@ class Article extends BaseController
                 "msg" => "table is empty",
             ]);
         }
-    }
 
+    }
     public function addArticles()
     {
         $amodel = $this->articlemodel;
@@ -70,7 +70,9 @@ class Article extends BaseController
                 "msg" => "successfully insertion",
             ]
         );
+
     }
+
     public function showArticleData()
     {
         $amodel = $this->articlemodel;
@@ -111,5 +113,18 @@ class Article extends BaseController
             "msg" => "article Deleted succesfully",
         ]);
     }
-
+    public function categories()
+    {
+        $cmodel = $this->categoriesmodel;
+        $categories = $cmodel->getAll();
+        $article;
+        while ($categories) {
+            $article = $categories;
+        }
+        echo json_encode(
+            [
+                'categories' => $article,
+            ]
+        );
+    }
 }

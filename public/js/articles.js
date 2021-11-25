@@ -109,9 +109,11 @@ $(function () {
                 required: true,
                 minlength: 100,
             },
-        }, messages: {
+        },
+        messages: {
             // message
-        }, submitHandler: function (form, event) {
+        },
+        submitHandler: function (form, event) {
             event.preventDefault();
             let edit = {
                 url: BASE_URL + "/article/updatearticle",

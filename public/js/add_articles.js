@@ -27,4 +27,18 @@ $(function() {
             $.ajax(article);
         }
     })
+
+    function add_categories() {
+        let options = {
+            url: BASE_URL + "article/categories",
+            dataType: "json",
+            success: function(res) {
+                res.article.map(function(data) {
+                    $("#category select").append(`<option value="${data.category}">${data.category}</option>`)
+                })
+            }
+        }
+        $.ajax(options);
+    }
+    add_categories();
 })

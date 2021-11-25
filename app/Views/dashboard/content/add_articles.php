@@ -28,8 +28,6 @@ echo view('dashboard/sidebar/sidebar');
                 <div class="col-md-12 p-0">
                     <div class="card">
                         <div class="card-body">
-                            <!-- <h2 class="fw-bold mb-2 text-uppercase">Articles</h2> -->
-                            <!-- <hr> -->
                             <div class="alert alert-danger" id="login-err" style="display: none;"></div>
                             <form method="post" autocomplete="off" id="frm-article">
                                 <div class="form-outline mb-2 inputvalues" style="text-align:left">

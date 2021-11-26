@@ -27,8 +27,8 @@ echo view('dashboard/sidebar/sidebar');
                     <div class="card border-0  h-100">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="<?php echo base_url('uploaded_img/avatar7.png') ?>" alt="Admin" class="circle"
-                                    id="profile-photo">
+                                <img src="<?php echo $session->get('user_details')['photo']; ?>"
+                                    onerror="load_default_img(this)" alt="Admin" class="circle" id="profile-photo">
                                 <a class="h3 fa fa-camera cursor-pointer text-dark" id="change-photo"
                                     style="display:none"></a>
                                 <div class=" mt-3">

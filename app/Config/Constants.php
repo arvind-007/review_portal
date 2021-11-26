@@ -14,6 +14,8 @@
  | existing namespaces of App\* namespaced-classes.
  */
 defined('APP_NAMESPACE') || define('APP_NAMESPACE', 'App');
+defined('BASE_URL') || define('BASE_URL', 'http://localhost/review_portal/public/');
+defined('ACTIVATION_EXPIRE_TIME') || define('ACTIVATION_EXPIRE_TIME', 1800);
 
 /*
  | --------------------------------------------------------------------------

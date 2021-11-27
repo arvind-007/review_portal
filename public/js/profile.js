@@ -39,7 +39,7 @@ $(function () {
                     res.user_details[0]['gender'] ? $("#gender").html(res.user_details[0]['gender']) : false;
                     res.user_details[0]['mobile'] != 0 ? $("#mobile").html(res.user_details[0]['mobile']) : false;
                     res.user_details[0]['address'] ? $("#address").html(res.user_details[0]['address']) : false;
-                    res.user_details[0]['profile_photo'] ? $("#profile-photo").attr('src', BASE_URL + "uploaded_img/" + res.user_details[0]['profile_photo']) : false;
+                    res.user_details[0]['profile_photo'] ? $("#profile-photo").attr('src', BASE_URL + "/uploads/user_images/" + res.user_details[0]['profile_photo']) : false;
 
                     $("#i-fname").val(res.user_details[0]['first_name']);
                     $("#i-lname").val(res.user_details[0]['last_name']);

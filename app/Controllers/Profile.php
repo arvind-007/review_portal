@@ -57,7 +57,7 @@ class Profile extends BaseController
             $size = $photo['size'];
             $type = $photo['type'];
             $img_name = md5($name . time()) . "." . $ext;
-            move_uploaded_file($tmp_name, "uploaded_img/" . $img_name);
+            move_uploaded_file($tmp_name, "uploads/user_images/" . $img_name);
         }
         // $data = [
         //     'mobile' => $this->request->getPost('mobile'),
@@ -78,7 +78,7 @@ class Profile extends BaseController
         $user_detail = [
             "id" => $id,
             "name" => $this->request->getPost('fname') . " " . $this->request->getPost('lname'),
-            "photo" => $img_name,
+            "photo" => base_url("uploads/user_images/" . $img_name),
         ];
         $this->session->set("user_details", $user_detail);
         echo json_encode([

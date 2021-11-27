@@ -42,11 +42,11 @@ class Auth extends BaseController
 
             $user = $model->login($email, $password); // Login method you have to create
             if ($user) {
-                switch($user->status){
-                    case 0: 
+                switch ($user->status) {
+                    case 0:
                         echo json_encode([
                             'status' => 0,
-                            'message' => 'Your account is not activated yet. <br>Please check your email.'
+                            'message' => 'Your account is not activated yet. <br>Please check your email.',
                         ]);
                         break;
                     case 1:
@@ -55,7 +55,7 @@ class Auth extends BaseController
                         $user_detail = [
                             "id" => $user->id,
                             "name" => ucwords($profile->first_name . " " . $profile->last_name),
-                            "photo" => file_exists(base_url("uploads/user_images/".$profile->profile_photo))?base_url("uploads/user_images/".$profile->profile_photo):base_url("img/avatar.png"),
+                            "photo" => file_exists(base_url("uploads/user_images/" . $profile->profile_photo)) ? base_url("uploads/user_images/" . $profile->profile_photo) : base_url("img/avatar.png"),
                         ];
 
                         $this->session->set("is_login", 1);
@@ -101,7 +101,6 @@ class Auth extends BaseController
             'updated_at' => date("d/m/Y"),
         ];
         $id = $model->insertData($data);
-        $this->sendVerificationEmail($id);
         $data1 = [
             "user_id" => $id,
             "first_name" => $this->request->getPost('fname'),
@@ -114,6 +113,8 @@ class Auth extends BaseController
             "status" => 1,
             "msg" => "succesfully insertion",
         ]);
+        // $this->sendVerificationEmail(base64_encode($id), base64_encode($this->request->getPost('email')));
+        $this->sendVerificationEmail($id, $this->request->getPost('email'));
     }
 
     public function emailExist()
@@ -170,35 +171,48 @@ class Auth extends BaseController
         exit;
     }
 
-    function sendVerificationEmail($id = false){
-        $uid = base64_encode($this->encrypter->encrypt($id));
-
-        $url = base_url("/auth/verify?uid=".$uid);
+    public function sendVerificationEmail($id, $mail)
+    {
+        $uid = url_base64_encode($this->encrypter->encrypt($id));
+        $time = url_base64_encode(time());
+        $url = base_url("/auth/verify?uid=" . $uid . "&t=" . $time);
 
         $email = \Config\Services::email();
 
-        $email->setFrom('arvindjangir@gmail.com', 'Arvind Jangir');
-        $email->setTo('arvind.ewiz@gmail.com');
+        $email->setFrom('manishpatodiya025@gmail.com', 'document code');
+        $email->setTo($mail);
+        $email->setSubject('Email verification');
 
-        $email->setSubject('Email Test');
-        $email->setMessage('Testing the email class.');
+        $email->setMessage("<!DOCTYPE html>
+        <html lang='en'>
 
-        echo $email->send();
-        echo $email->printDebugger();
+        <head>
+            <meta charset='UTF-8'>
+            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+            <title>Document</title>
+        </head>
+
+        <body>
+            <pre>Your account is not yet activated. To activate your account <a href='$url'>click here</a>
+        </body>
+        </html>");
+        $email->send();
     }
 
-    function verify(){
-        $enc = base64_decode($this->request->getGet("uid"));
+    public function verify()
+    {
+        $enc = url_base64_decode($this->request->getGet('uid'));
         $uid = $this->encrypter->decrypt($enc);
-        $time = $this->request->getGet("t");
+        $time = url_base64_decode($this->request->getGet('t'));
         $diff = time() - $time;
-        if($diff > ACTIVATION_EXPIRE_TIME){
+        if ($diff > ACTIVATION_EXPIRE_TIME) {
             echo "Your activation link has been expired.";
-        }else{
+        } else {
             $success = $this->usermodel->activateUser($uid);
-            if($success){
+            if ($success) {
                 echo "Your account has been activated.";
-            }else{
+            } else {
                 echo "Failed to activate your account. May be your link has been expired.";
             }
         }

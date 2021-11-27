@@ -1,3 +1,5 @@
+<!--Include the JS & CSS-->
+<link rel="stylesheet" href="<?php echo base_url('/richtexteditor/rte_theme_default.css'); ?>" />
 <?php
 echo view('dashboard/header/header_top');
 echo view('dashboard/sidebar/sidebar');
@@ -57,10 +59,10 @@ echo view('dashboard/sidebar/sidebar');
                             <select class="form-select" name='category' id="category">
                                 <option value="" selected>select categories</option>
                                 <?php
-for ($i = 0; $i < count($categories); $i++) {
-    echo "<option value=" . $categories[$i]['id'] . ">" . $categories[$i]['category'] . "</option>";
-}
-?>
+                                for ($i = 0; $i < count($categories); $i++) {
+                                    echo "<option value=" . $categories[$i]['id'] . ">" . $categories[$i]['category'] . "</option>";
+                                }
+                                ?>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -122,3 +124,11 @@ for ($i = 0; $i < count($categories); $i++) {
 echo view('dashboard/modals/delete_modal');
 echo view('dashboard/footer/footer');
 ?>
+<script type="text/javascript" src="<?php echo base_url('/richtexteditor/rte.js'); ?>">
+</script>
+<script type="text/javascript" src='<?php echo base_url('/richtexteditor/plugins/all_plugins.js');?> '></script>
+
+
+<script>
+editor1 = new RichTextEditor("#art-body");
+</script>

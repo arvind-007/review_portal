@@ -69,7 +69,10 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn-lg btn-dark form-control">Register</button>
+
+                                        <button type="submit" class="btn-lg btn-dark form-control" id="btn-register">
+                                            Register
+                                        </button>
                                     </div>
                                     <p class="text-center text-dark mt-5 mb-0">Have already an account? <a
                                             href=<?php echo base_url(); ?> class="fw-bold"><u>Login here</u></a></p>

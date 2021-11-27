@@ -2,6 +2,7 @@ function base_url(uri) {
   return BASE_URL + uri;
 }
 $(function () {
+  var btn_register;
   $("#frm-register").validate({
     rules: {
       fname: {
@@ -41,12 +42,22 @@ $(function () {
     submitHandler: function (form, event) {
       event.preventDefault();
       let register = {
+        beforeSend: function () {
+          $("#btn-register").attr("disabled", true);
+          btn_register = $("#btn-register").html();
+          $("#btn-register").html(`<span class="fa-lg">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>`);
+        },
         url: base_url("/auth/register"),
         data: $("#frm-register").serialize(),
         method: "post",
         dataType: "json",
         success: function (res) {
           window.location = BASE_URL;
+        },
+        complete: function () {
+          $("#btn-register").attr("disabled", false).html(btn_register);
         },
         error: function (err) {
           console.log(err);
@@ -59,7 +70,7 @@ $(function () {
   $("#frm-login input").keyup(function () {
     $("#login-err").hide();
   });
-
+  var btn_login;
   $("#frm-login").validate({
     rules: {
       email: {
@@ -72,6 +83,13 @@ $(function () {
     submitHandler: function (form, event) {
       let login = {
         url: base_url("/auth/login"),
+        beforeSend: function () {
+          $("#btn-login").attr("disabled", true);
+          btn_login = $("#btn-login").html();
+          $("#btn-login").html(`<span class="fa-lg">
+              <i class="fas fa-circle-notch fa-spin"></i>
+          </span>`);
+        },
         data: $("#frm-login").serialize(),
         method: "post",
         dataType: "json",
@@ -83,6 +101,9 @@ $(function () {
             $("#login-err").html(res.message);
             $("#login-err").show();
           }
+        },
+        complete: function () {
+          $("#btn-login").attr("disabled", false).html(btn_login);
         },
         error: function (err) {
           console.log(err);

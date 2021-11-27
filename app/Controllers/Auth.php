@@ -194,7 +194,7 @@ class Auth extends BaseController
         </head>
 
         <body>
-            <pre>Your account is not yet activated. To activate your account <a href='$url'>click here</a>
+            <pre>Thank you for registering with us. Please verify your email by <a href='$url'>click here</a>
         </body>
         </html>");
         $email->send();

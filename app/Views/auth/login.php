@@ -53,7 +53,8 @@ echo $url->baseURL;?>";
                                             password?</a>
                                     </p>
 
-                                    <button class="btn btn-dark btn-lg px-5 form-control" type="submit">Login</button>
+                                    <button class="btn btn-dark btn-lg px-5 form-control" type="submit"
+                                        id="btn-login">Login</button>
                                 </form>
                             </div>
 

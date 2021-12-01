@@ -20,12 +20,13 @@ echo view('dashboard/sidebar/sidebar');
     <section style="display:block" id="sec-table">
         <div class="container-fluid">
             <div class="row m-2 rounded">
-                <div class="card border-0 col-6 h-100">
+                <div class="card border-0  h-100">
                     <table class="table" id="table-articles">
                         <thead>
                             <tr>
+                                <th scope="col" style="width:55px" ;>S.No.</th>
+                                <th scope="col" style="width:160px">Image</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Image</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -37,8 +38,9 @@ echo view('dashboard/sidebar/sidebar');
         </div>
     </section>
 </div>
-<!-- <script src="<?php echo base_url() ?>"></script> -->
+<script src="<?php echo base_url('js/categories.js') ?>"></script>
 <?php
 echo view('dashboard/modals/change_pass_modal');
 echo view('dashboard/footer/footer.php');
+echo view('dashboard/modals/delete_modal');
 ?>

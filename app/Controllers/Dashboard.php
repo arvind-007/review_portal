@@ -20,11 +20,19 @@ class Dashboard extends BaseController
         $this->encrypter = \config\Services::encrypter();
         $this->usermodel = model('UserModel');
         $this->profilemodel = model('UserProfileModel');
+        $this->articlemodel = model('ArticlesModel');
         helper('common');
     }
 
     public function index()
     {
-        return view('dashboard/content/dashboard', ["session" => $this->session]);
+        $users = $this->usermodel->getCount();
+        $articles = $this->articlemodel->getCount();
+        $data = [
+            "session" => $this->session,
+            "articlescount" => $articles,
+            "userscount" => $users,
+        ];
+        return view('dashboard/content/dashboard', $data);
     }
 }

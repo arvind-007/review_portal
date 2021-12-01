@@ -104,4 +104,11 @@ class UserModel extends Model
         $builder->update();
     }
 
+    public function getCount()
+    {
+        $builder = $this->builder;
+        $builder->where('deleted_at is NULL');
+        return $builder->countAllResults();
+    }
+
 }

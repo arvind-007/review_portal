@@ -39,7 +39,7 @@ class ArticlesModel extends Model
     {
         $builder = $this->builder;
         $builder->select($column);
-        $builder->where('deleted_at is NULL');
+        $builder->where('articles.deleted_at is NULL');
         if ($type) {
             $builder->join($otherTable, $cond, $type);
         } else {
@@ -54,7 +54,7 @@ class ArticlesModel extends Model
     {
         $builder = $this->builder;
         $builder->select($column);
-        $builder->where('deleted_at is NULL');
+        $builder->where('articles.deleted_at is NULL');
         $builder->where($where);
         if ($type) {
             $builder->join($otherTable, $cond, $type);
@@ -88,6 +88,13 @@ class ArticlesModel extends Model
         $builder->set(['deleted_at' => date('d/m/Y')]);
         $builder->where('id', $id);
         $builder->update();
+    }
+
+    public function getCount()
+    {
+        $builder = $this->builder;
+        $builder->where('deleted_at is NULL');
+        return $builder->countAllResults();
     }
 
 }

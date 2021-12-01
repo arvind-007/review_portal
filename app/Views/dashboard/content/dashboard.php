@@ -25,10 +25,10 @@ echo view('dashboard/sidebar/sidebar');
                             <!-- small box -->
                             <div class="small-box bg-warning  p-3">
                                 <div class="inner position-relative ">
-                                    <h3>44</h3>
+                                    <h3><?php echo $userscount ?></h3>
 
-                                    <p>User Registrations</p>
-                                    <i class="fas fa-user fa-4x opacity-0 position-absolute end-0 top-0"></i>
+                                    <p>Users</p>
+                                    <i class="fas fa-users fa-4x opacity-0 position-absolute end-0 top-0"></i>
 
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ echo view('dashboard/sidebar/sidebar');
                             <!-- small box -->
                             <div class="small-box bg-danger text-light p-3">
                                 <div class="inner position-relative">
-                                    <h3>65</h3>
+                                    <h3><?php echo $articlescount ?></h3>
 
                                     <p> Articles</p>
                                     <i class="fas fa-newspaper fa-4x opacity-0 position-absolute end-0 top-0"></i>

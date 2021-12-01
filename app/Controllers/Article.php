@@ -44,7 +44,7 @@ class Article extends BaseController
     public function showArticles()
     {
         $amodel = $this->articlemodel;
-        $articles = $amodel->getFieldsForJoinAll('category,articles.id,created_at,title', 'categories c', "c.id = category_id");
+        $articles = $amodel->getFieldsForJoinAll('category,articles.id,articles.created_at,title', 'categories c', "c.id = category_id");
         if ($articles) {
             echo json_encode([
                 "status" => 1,

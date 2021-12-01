@@ -4,7 +4,7 @@
     <ul class="nav nav-pills flex-column mb-auto">
         <li class="nav-item" id="tab-exams">
             <a href="<?php echo base_url("dashboard") ?>" class=" nav-link text-white">
-                <i class="fas fa-users"> </i>
+                <i class="fas fa-desktop"> </i>
                 dashboard
             </a>
         </li>
@@ -16,20 +16,20 @@
         </li>
         <li class="nav-item" id="tab-teachers">
             <a href="<?php echo base_url("Category") ?>" class="nav-link text-white">
-                <i class="fas fa-users"></i>
+                <i class="fas fa-list"></i>
                 Category
+            </a>
+        </li>
+        <li class="nav-item" id="tab-exams">
+            <a href="<?php echo base_url('tag') ?>" class="nav-link text-white">
+                <i class="fas fa-tags"> </i>
+                Tags
             </a>
         </li>
         <li class="nav-item" id="tab-students">
             <a href="<?php echo base_url("article") ?>" class="nav-link text-white">
                 <i class="fas fa-newspaper"> </i>
                 Articles
-            </a>
-        </li>
-        <li class="nav-item" id="tab-exams">
-            <a href="<?php echo base_url('tag') ?>" class="nav-link text-white">
-                <i class="fas fa-users"> </i>
-                Tags
             </a>
         </li>
     </ul>

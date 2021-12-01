@@ -17,13 +17,13 @@ $(function() {
                             status = '<label class="badge bg-danger">Suspend</label>'
                         }
                         $("#table-articles tbody").append(`<tr>
-                    <th style="width:30px";>${r}</th>
+                    <th>${r}</th>
                     <td> ${user.first_name} ${user.last_name}</td>
                     <td> ${user.email} </td >
                     <td> ${user.mobile} </td>
                     <td> ${status} </td>
-                    <td><a class='fas fa-minus-square text-danger me-1' id='btn-suspend' uid=' ${user.id} '>
-                    <a  class='fas fa-trash text-danger me-1' id='btn-dlt' uid=' ${user.id}'>
+                    <td><a class='fas fa-exclamation-circle text-danger me-1' id='btn-suspend' title="Suspend user" uid=' ${user.id} '>
+                    <a  class='fas fa-trash text-danger me-1' id='btn-dlt' title="Delete user" uid=' ${user.id}'>
                     </tr > `);
                         r++;
                     });

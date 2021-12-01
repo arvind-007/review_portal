@@ -53,4 +53,12 @@ class UserProfileModel extends Model
         }
     }
 
+    public function deleteRow($id)
+    {
+        $builder = $this->builder;
+        $builder->set(['deleted_at' => date('d/m/Y')]);
+        $builder->where('user_id', $id);
+        $builder->update();
+    }
+
 }

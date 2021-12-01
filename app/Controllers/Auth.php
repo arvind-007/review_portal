@@ -21,7 +21,7 @@ class Auth extends BaseController
         $uri = service('uri');
 
         if ($this->session->get("is_login") && !($uri->getTotalSegments() > 1 && $uri->getSegment(2) == 'logout')) {
-            header("Location:" . base_url("profile"));
+            header("Location:" . base_url("dashboard"));
             exit;
         }
     }

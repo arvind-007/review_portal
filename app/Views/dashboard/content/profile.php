@@ -8,9 +8,12 @@ echo view('dashboard/sidebar/sidebar');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h2>Profile</h2>
+                    <h2 class="fw-lighter">Profile</h2>
                 </div>
                 <div class="col-sm-6 text-end">
+                    <a class="btn btn-outline-dark" href="<?php echo base_url("article") ?> " id="btn-back">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
                     <a class="btn btn-outline-dark" id="btn-edit-profile">Edit Profile</a>
                     <a class="btn btn-outline-dark" href="" id="btn-back" style="display:none">
                         <i class="fas fa-arrow-left"></i>

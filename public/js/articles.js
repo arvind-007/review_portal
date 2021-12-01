@@ -80,7 +80,7 @@ $(function() {
                     true
                 );
                 editor1.setHTMLCode(res.articles[0].body);
-                $("#art-body").val(res.articles[0].body);
+                // $("#art-body").val(res.articles[0].body);
                 $("#uid").val(id);
             },
             error: function(err) {
@@ -93,6 +93,38 @@ $(function() {
     $("#btn-backtotable").click(function() {
         window.location.reload();
     });
+
+    $("#frm-add-article").validate({
+        rules: {
+            title: {
+                required: true,
+                minlength: 5,
+            },
+            tags: {
+                required: true,
+                minlength: 3,
+            },
+            category: {
+                required: true,
+            },
+            body: {
+                required: true,
+                minlength: 100,
+            },
+        },
+        submitHandler: function(form, event) {
+            let article = {
+                url: BASE_URL + "article/addArticle",
+                data: $(form).serialize(),
+                dataType: "json",
+                method: "post",
+                success: function(res) {
+                    window.location = BASE_URL + "article";
+                }
+            }
+            $.ajax(article);
+        }
+    })
 
     $("#frm-edit-article").validate({
         rules: {
@@ -157,4 +189,6 @@ $(function() {
         };
         $.ajax(dlt);
     });
+
+
 });

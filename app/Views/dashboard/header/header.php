@@ -10,6 +10,10 @@
                 class="rounded-circle" style="border:1px solid #ccc;">
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="<?php echo base_url("profile") ?>">Profile</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
             <li><a href="<?php echo base_url('auth/logout') ?>" class="dropdown-item" id="btn-logout">LogOut</a></li>
         </ul>
     </div>

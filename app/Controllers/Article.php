@@ -28,12 +28,19 @@ class Article extends BaseController
             "categories" => $cmodel->getAll(),
             "session" => $this->session,
         ];
-        return view('dashboard/content/articles', $data);
+        return view('dashboard/content/article/articles', $data);
     }
-    public function article()
+
+    public function addArticleView()
     {
-        return view('dashboard/content/add_articles');
+        $cmodel = $this->categoriesmodel;
+        $data = [
+            "categories" => $cmodel->getAll(),
+            "session" => $this->session,
+        ];
+        return view('dashboard/content/article/add_article', $data);
     }
+
     public function showArticles()
     {
         $amodel = $this->articlemodel;
@@ -50,9 +57,9 @@ class Article extends BaseController
                 "msg" => "table is empty",
             ]);
         }
-
     }
-    public function addArticles()
+
+    public function addArticle()
     {
         $amodel = $this->articlemodel;
         $data = [
@@ -70,7 +77,6 @@ class Article extends BaseController
                 "msg" => "successfully insertion",
             ]
         );
-
     }
 
     public function showArticleData()
@@ -112,19 +118,5 @@ class Article extends BaseController
             "status" => 1,
             "msg" => "article Deleted succesfully",
         ]);
-    }
-    public function categories()
-    {
-        $cmodel = $this->categoriesmodel;
-        $categories = $cmodel->getAll();
-        $article;
-        while ($categories) {
-            $article = $categories;
-        }
-        echo json_encode(
-            [
-                'categories' => $article,
-            ]
-        );
     }
 }

@@ -35,11 +35,13 @@ class UserModel extends Model
     }
 
     // function to get fields for join rows on the basis of the condition
-    public function getFieldsForJoin($column, $otherTable, $cond, $where, $type = null)
+    public function getFieldsForJoin($column, $otherTable, $cond, $where = '', $type = null)
     {
         $builder = $this->builder;
         $builder->select($column);
-        $builder->where($where);
+        if ($where) {
+            $builder->where($where);
+        }
         $builder->where('users.deleted_at is NULL');
         if ($type) {
             $builder->join($otherTable, $cond, $type);
@@ -81,16 +83,25 @@ class UserModel extends Model
         }
     }
 
-    public function activateUser($uid = false){
-        if($uid){
+    public function activateUser($uid = false)
+    {
+        if ($uid) {
             $builder = $this->builder;
             $builder->set("status", 1);
             $builder->where("id", $uid);
             $builder->update();
             return true;
-        }else{
+        } else {
             return false;
         }
+    }
+
+    public function deleteRow($id)
+    {
+        $builder = $this->builder;
+        $builder->set(['deleted_at' => date('d/m/Y')]);
+        $builder->where('id', $id);
+        $builder->update();
     }
 
 }

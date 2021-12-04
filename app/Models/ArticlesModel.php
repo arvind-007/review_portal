@@ -97,4 +97,13 @@ class ArticlesModel extends Model
         return $builder->countAllResults();
     }
 
+    public function getPaginate($limit, $offset)
+    {
+        $builder = $this->builder;
+        $builder->select('category,articles.id,articles.created_at,title');
+        $builder->join('categories c', "c.id = category_id");
+        $builder->where('articles.deleted_at is NULL');
+        $builder->limit($limit, $offset);
+        return $builder->get()->getResultArray();
+    }
 }

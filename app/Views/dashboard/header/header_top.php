@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?php echo base_url("/css/style.css") ?>">
     <script>
     const BASE_URL = "<?php echo BASE_URL; ?>";
+    const PAGE = <?php echo isset($page_number) && $page_number ? $page_number : 1; ?>;
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

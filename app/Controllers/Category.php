@@ -7,6 +7,8 @@ class Category extends BaseController
     public $categorymodel;
     public $session;
     public $encrypter;
+    public $page;
+    public $perPage;
     public function __construct()
     {
         $this->session = \Config\Services::session();
@@ -18,16 +20,30 @@ class Category extends BaseController
         $this->encrypter = \config\Services::encrypter();
         $this->categorymodel = model('CategoriesModel');
         helper('common');
+        $this->pager = \Config\Services::pager();
+        $this->perPage = 10;
     }
 
     public function index()
     {
-        return view('dashboard/content/category/categories', ["session" => $this->session]);
+        $pager = $this->pager;
+        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') - 2 : 1;
+        $perPage = $this->perPage;
+        $total = $this->categorymodel->getCount();
+        $pager->makeLinks($page, $perPage, $total);
+        $data = [
+            "session" => $this->session,
+            "pager" => $this->pager,
+            'page_number' => $this->request->getGet('page'),
+        ];
+        return view('dashboard/content/category/categories', $data);
     }
 
     public function showCategories()
     {
-        $categories = $this->categorymodel->getAll();
+        $perPage = $this->perPage;
+        $offset = ($this->request->getGet('page') < 2) ? '1' : (($this->request->getGet('page') - 1) * $perPage) + 1;
+        $categories = $this->categorymodel->getPaginate($perPage, $offset - 1);
         echo json_encode([
             "status" => 1,
             "msg" => "categories fetch successfully!",

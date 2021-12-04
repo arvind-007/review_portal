@@ -111,4 +111,14 @@ class UserModel extends Model
         return $builder->countAllResults();
     }
 
+    public function getPaginate($limit, $offset)
+    {
+        $builder = $this->builder;
+        $builder->select('users.id,mobile,email,status,first_name,last_name,profile_photo');
+        $builder->join('users_profile up', 'up.user_id=users.id', 'left');
+        $builder->where('users.deleted_at is NULL');
+        $builder->limit($limit, $offset);
+        return $builder->get()->getResultArray();
+    }
+
 }

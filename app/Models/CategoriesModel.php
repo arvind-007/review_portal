@@ -58,4 +58,20 @@ class CategoriesModel extends Model
 
     }
 
+    public function getCount()
+    {
+        $builder = $this->builder;
+        $builder->where('deleted_at is NULL');
+        return $builder->countAllResults();
+    }
+
+    public function getPaginate($limit, $offset)
+    {
+        $builder = $this->builder;
+        $builder->select('category,image,id');
+        $builder->where('deleted_at is NULL');
+        $builder->limit($limit, $offset);
+        return $builder->get()->getResultArray();
+    }
+
 }

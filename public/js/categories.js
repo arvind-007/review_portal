@@ -1,7 +1,7 @@
 $(function() {
     categoriesTable = () => {
         categories = {
-            url: BASE_URL + "category/showcategories",
+            url: BASE_URL + "category/showcategories?page=" + PAGE,
             dataType: "json",
             success: function(res) {
                 $("#table-articles tbody").html("");

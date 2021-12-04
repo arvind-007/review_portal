@@ -11,7 +11,7 @@ echo view('dashboard/sidebar/sidebar');
                     <h2 class="fw-lighter">Category</h2>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <!--  -->
+                    <a class="btn btn-outline-dark" id="btn-add-category">Add</a>
                 </div>
             </div>
         </div>
@@ -41,6 +41,8 @@ echo view('dashboard/sidebar/sidebar');
 <script src="<?php echo base_url('js/categories.js') ?>"></script>
 <?php
 echo view('dashboard/modals/change_pass_modal');
+echo view('dashboard/modals/edit_category_modal');
+echo view('dashboard/modals/add_category_modal');
 echo view('dashboard/footer/footer.php');
 echo view('dashboard/modals/delete_modal');
 ?>

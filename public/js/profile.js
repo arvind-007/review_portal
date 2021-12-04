@@ -1,22 +1,23 @@
-$(function () {
-    $("#btn-edit-profile").click(function () {
+$(function() {
+    $("#btn-edit-profile").click(function() {
         $("#card-profile").hide();
         $("#change-photo").show();
         $("#btn-edit-profile").hide();
         $("#change-photo").show();
-        $("#btn-back").show();
+        $("#btn-back").hide();
+        $("#btn-backToProfile").show();
         $("#card-edit-profile").show();
     });
 
-    $("#btn-change-pass").click(function () {
+    $("#btn-change-pass").click(function() {
         $("#mdl-change-pass").modal("show");
     });
 
-    $("#change-photo").click(function () {
+    $("#change-photo").click(function() {
         $("#choose-photo").click();
     })
 
-    $("#choose-photo").change(function () {
+    $("#choose-photo").change(function() {
         var file = this.files[0];
         if (file) {
             $("#profile-photo").attr('src', URL.createObjectURL(file));
@@ -30,7 +31,7 @@ $(function () {
             },
             dataType: "json",
             method: "post",
-            success: function (res) {
+            success: function(res) {
                 if (res.status = 1) {
                     res.user_details[0]['first_name'] ? $("#fname").html(res.user_details[0]['first_name']) : false;
                     res.user_details[0]['last_name'] ? $("#lname").html(res.user_details[0]['last_name']) : false;
@@ -52,7 +53,7 @@ $(function () {
                     $("#i-address").val(res.user_details[0]['address']);
                 }
             },
-            error: function (err) {
+            error: function(err) {
                 console.log(err);
             }
         }
@@ -81,9 +82,11 @@ $(function () {
                 maxlength: 10,
                 mobileExist: true
             },
-        }, messages: {
+        },
+        messages: {
             // message
-        }, submitHandler: function (form, event) {
+        },
+        submitHandler: function(form, event) {
             event.preventDefault();
             let form_data = new FormData(form);
             let register = {
@@ -93,10 +96,10 @@ $(function () {
                 dataType: "json",
                 processData: false,
                 contentType: false,
-                success: function (res) {
+                success: function(res) {
                     window.location.reload();
                 },
-                error: function (err) {
+                error: function(err) {
                     console.log(err);
                 }
             }
@@ -119,20 +122,22 @@ $(function () {
                 required: true,
                 equalTo: "#new_pass",
             },
-        }, messages: {
+        },
+        messages: {
             password: {
                 required: "Current password must be required"
             },
             cpassword: {
                 equalTo: "Password does not match",
             },
-        }, submitHandler: function (form) {
+        },
+        submitHandler: function(form) {
             let changepass = {
                 url: BASE_URL + "profile/changepass",
                 data: $("#frm-change-pass").serialize(),
                 method: "post",
                 dataType: "json",
-                success: function (res) {
+                success: function(res) {
                     if (res.status == 1) {
                         window.location.reload();
                     } else {
@@ -140,7 +145,7 @@ $(function () {
                         $("#pass-err").show();
                     }
                 },
-                error: function (err) {
+                error: function(err) {
                     console.log(err);
                 }
             }

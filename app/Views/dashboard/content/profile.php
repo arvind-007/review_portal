@@ -11,11 +11,11 @@ echo view('dashboard/sidebar/sidebar');
                     <h2 class="fw-lighter">Profile</h2>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <a class="btn btn-outline-dark" href="<?php echo base_url("article") ?> " id="btn-back">
+                    <a class="btn btn-outline-dark" href="<?php echo 'javascript:history.go(-1)' ?> " id="btn-back">
                         <i class="fas fa-arrow-left"></i>
                     </a>
                     <a class="btn btn-outline-dark" id="btn-edit-profile">Edit Profile</a>
-                    <a class="btn btn-outline-dark" href="" id="btn-back" style="display:none">
+                    <a class="btn btn-outline-dark" href="" id="btn-backToProfile" style="display:none">
                         <i class="fas fa-arrow-left"></i>
                     </a>
                     <a class="btn btn-outline-dark " target="__blank" id="btn-change-pass">Change Password</a>

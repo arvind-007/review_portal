@@ -24,6 +24,16 @@ class CategoriesModel extends Model
         return $builder->get()->getResultArray();
     }
 
+    // function to get some fields of rows on the basis of condition
+    public function getFields($column, $where)
+    {
+        $builder = $this->builder;
+        $builder->select($column);
+        $builder->where($where);
+        $builder->where('deleted_at is NULL');
+        return $builder->get()->getRowArray();
+    }
+
     public function insertData($data)
     {
         $builder = $this->builder;
@@ -45,6 +55,7 @@ class CategoriesModel extends Model
         $builder->set(['deleted_at' => date('d/m/Y')]);
         $builder->where('id', $id);
         $builder->update();
+
     }
 
 }

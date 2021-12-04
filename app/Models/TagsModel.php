@@ -4,16 +4,24 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UserProfileModel extends Model
+class TagsModel extends Model
 {
     public $db;
     public $builder;
 
-    // constructor that insitialize the global db and builder
     public function __construct()
     {
         $this->db = db_connect();
-        $this->builder = $this->db->table('users_profile');
+        $this->builder = $this->db->table('tags');
+    }
+
+    // function to get rows on the basis of condition
+    public function getAll()
+    {
+        $builder = $this->builder;
+        $builder->select("*");
+        $builder->where('deleted_at is NULL');
+        return $builder->get()->getResultArray();
     }
 
     // function to get some fields of rows on the basis of condition
@@ -26,7 +34,6 @@ class UserProfileModel extends Model
         return $builder->get()->getRowArray();
     }
 
-    //function to insert data in the table
     public function insertData($data)
     {
         $builder = $this->builder;
@@ -41,23 +48,12 @@ class UserProfileModel extends Model
         $builder->where($where);
         $builder->update();
     }
-    public function getUserProfile($id)
-    {
-        $this->builder->where("user_id", $id);
-
-        $result = $this->builder->get()->getRow();
-        if ($result) {
-            return $result;
-        } else {
-            return false;
-        }
-    }
 
     public function deleteRow($id)
     {
         $builder = $this->builder;
         $builder->set(['deleted_at' => date('d/m/Y')]);
-        $builder->where('user_id', $id);
+        $builder->where('id', $id);
         $builder->update();
     }
 

@@ -79,6 +79,7 @@ class Profile extends BaseController
             "id" => $id,
             "name" => $this->request->getPost('fname') . " " . $this->request->getPost('lname'),
             "photo" => base_url("uploads/user_images/" . $img_name),
+            file_exists(base_url("uploads/user_images/" . $img_name)) ? base_url("uploads/user_images/" . $img_name) : base_url("img/avatar.png"),
         ];
         $this->session->set("user_details", $user_detail);
         echo json_encode([

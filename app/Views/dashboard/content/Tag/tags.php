@@ -11,7 +11,7 @@ echo view('dashboard/sidebar/sidebar');
                     <h2 class="fw-lighter">LIST OF TAGS</h2>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <!--  -->
+                    <a class="btn btn-outline-dark" id="btn-add-tag">Add</a>
                 </div>
             </div>
         </div>
@@ -20,10 +20,11 @@ echo view('dashboard/sidebar/sidebar');
     <section style="display:block" id="sec-table">
         <div class="container-fluid">
             <div class="row m-2 rounded">
-                <div class="card border-0 col-3 h-100">
+                <div class="card border-0 h-100">
                     <table class="table" id="table-articles">
                         <thead>
                             <tr>
+                                <th style="width:60px" scope="col">S.No.</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -36,8 +37,11 @@ echo view('dashboard/sidebar/sidebar');
         </div>
     </section>
 </div>
-<!-- <script src="<?php echo base_url() ?>"></script> -->
+<script src="<?php echo base_url('js/tags.js') ?>"></script>
 <?php
 echo view('dashboard/modals/change_pass_modal');
+echo view('dashboard/modals/add_tag_modal');
+echo view('dashboard/modals/edit_tag_modal');
+echo view('dashboard/modals/delete_modal');
 echo view('dashboard/footer/footer.php');
 ?>

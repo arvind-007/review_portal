@@ -21,7 +21,7 @@ echo view('dashboard/sidebar/sidebar');
             <div class=" m-2 rounded">
                 <div class="card border-0   h-100">
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6" style="cursor:pointer" id="users">
                             <!-- small box -->
                             <div class="small-box bg-warning  p-3">
                                 <div class="inner position-relative ">
@@ -34,7 +34,7 @@ echo view('dashboard/sidebar/sidebar');
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6" style="cursor:pointer" id="articles">
                             <!-- small box -->
                             <div class="small-box bg-danger text-light p-3">
                                 <div class="inner position-relative">

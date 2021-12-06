@@ -7,6 +7,8 @@ class Users extends BaseController
     public $usermodel;
     public $profilemodel;
     public $session;
+    public $pager;
+    public $perPage;
     public function __construct()
     {
         $this->session = \Config\Services::session();
@@ -17,18 +19,32 @@ class Users extends BaseController
         }
         $this->usermodel = model('UserModel');
         $this->profilemodel = model('UserProfileModel');
+        $this->pager = \Config\Services::pager();
+        $this->perPage = 10;
         helper('common');
     }
 
     public function index()
     {
-        return view('dashboard/content/users/users', ["session" => $this->session]);
+        $pager = $this->pager;
+        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') : 1;
+        $perPage = $this->perPage;
+        $total = $this->usermodel->getCount();
+        $pager->makeLinks($page, $perPage, $total);
+        $data = [
+            "session" => $this->session,
+            "pager" => $this->pager,
+            'page_number' => $this->request->getGet('page'),
+        ];
+
+        return view('dashboard/content/users/users', $data);
     }
 
     public function showUsers()
     {
-        $umodel = $this->usermodel;
-        $users = $umodel->getFieldsForJoin('users.id,mobile,email,status,first_name,last_name,profile_photo', 'users_profile up', 'users.id=up.user_id');
+        $perPage = $this->perPage;
+        $offset = ($this->request->getGet('page') < 2) ? '1' : (($this->request->getGet('page') - 1) * $perPage) + 1;
+        $users = $this->usermodel->getPaginate($perPage, $offset - 1);
         echo json_encode([
             "status" => 1,
             'msg' => "Users details fetch successfully!",

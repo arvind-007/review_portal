@@ -32,6 +32,9 @@ echo view('dashboard/sidebar/sidebar');
                         <tbody>
                         </tbody>
                     </table>
+                    <nav class="nav justify-content-end">
+                        <?=$pager->links();?>
+                    </nav>
                 </div>
             </div>
         </div>

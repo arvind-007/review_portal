@@ -2,7 +2,7 @@ $(function() {
 
     tagsTable = () => {
         articles = {
-            url: BASE_URL + "tag/showtags",
+            url: BASE_URL + "tag/showtags?page=" + PAGE,
             dataType: "json",
             success: function(res) {
                 $("#table-articles tbody").html("");

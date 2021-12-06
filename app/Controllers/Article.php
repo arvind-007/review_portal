@@ -7,6 +7,8 @@ class Article extends BaseController
     public $articlemodel;
     public $categoriesmodel;
     public $session;
+    public $page;
+    public $perPage;
     public function __construct()
     {
         $this->session = \Config\Services::session();
@@ -18,15 +20,24 @@ class Article extends BaseController
 
         $this->articlemodel = model('ArticlesModel');
         $this->categoriesmodel = model('CategoriesModel');
+        $this->pager = \Config\Services::pager();
+        $this->perPage = 1;
         helper('common');
     }
 
     public function index()
     {
         $cmodel = $this->categoriesmodel;
+        $pager = $this->pager;
+        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') : 1;
+        $perPage = $this->perPage;
+        $total = $this->articlemodel->getCount();
+        $pager->makeLinks($page, $perPage, $total);
         $data = [
             "categories" => $cmodel->getAll(),
             "session" => $this->session,
+            "pager" => $this->pager,
+            'page_number' => $this->request->getGet('page'),
         ];
         return view('dashboard/content/article/articles', $data);
     }
@@ -43,8 +54,9 @@ class Article extends BaseController
 
     public function showArticles()
     {
-        $amodel = $this->articlemodel;
-        $articles = $amodel->getFieldsForJoinAll('category,articles.id,articles.created_at,title', 'categories c', "c.id = category_id");
+        $perPage = $this->perPage;
+        $offset = ($this->request->getGet('page') < 2) ? '1' : (($this->request->getGet('page') - 1) * $perPage) + 1;
+        $articles = $this->articlemodel->getPaginate($perPage, $offset - 1);
         if ($articles) {
             echo json_encode([
                 "status" => 1,

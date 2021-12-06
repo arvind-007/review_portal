@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2021 at 10:35 AM
+-- Generation Time: Dec 04, 2021 at 06:08 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -75,11 +75,36 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `category`, `image`, `created_at`, `deleted_at`, `updated_at`) VALUES
-(1, 'Young Minds', '', '25/11/2021', NULL, '25/11/2021'),
-(2, 'Humanities and Social Sciences', '', '25/11/2021', NULL, '25/11/2021'),
-(3, 'Engineering', '', '25/11/2021', NULL, '25/11/2021'),
-(4, 'Science', '', '25/11/2021', NULL, '25/11/2021'),
-(5, 'Health', '', '25/11/2021', NULL, '25/11/2021');
+(1, 'Young Minds', '1638437233_86e270f9fce3ad01fe0e.png', '25/11/2021', NULL, '02-12-2021'),
+(2, 'Humanities and Social Sciences', '1638437253_18752506d44adbc5cd01.jpg', '25/11/2021', NULL, '25/11/2021'),
+(3, 'Engineering', '1638437269_501a5d952553456a78a5.jpg', '25/11/2021', NULL, '25/11/2021'),
+(4, 'Science', '1638437283_4dba105fbe9278e31099.jpg', '25/11/2021', NULL, '25/11/2021'),
+(5, 'Health', '1638437294_dc9eed23d26d17c2b8d1.jpg', '25/11/2021', NULL, '02-12-2021');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tags`
+--
+
+CREATE TABLE `tags` (
+  `id` int(11) NOT NULL,
+  `tag` varchar(60) NOT NULL,
+  `created_at` varchar(25) DEFAULT NULL,
+  `deleted_at` varchar(25) DEFAULT NULL,
+  `updated_at` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`id`, `tag`, `created_at`, `deleted_at`, `updated_at`) VALUES
+(4, 'test', '02-12-2021', NULL, '02-12-2021'),
+(5, 'test1', '02-12-2021', NULL, '02-12-2021'),
+(6, 'test6', '02-12-2021', NULL, '02-12-2021'),
+(9, 'test', '02-12-2021', NULL, '02-12-2021'),
+(10, 'tes', '02-12-2021', NULL, '02-12-2021');
 
 -- --------------------------------------------------------
 
@@ -107,8 +132,8 @@ INSERT INTO `users` (`id`, `mobile`, `email`, `password`, `status`, `created_at`
 (2, '6376893673', 'deepak@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 2, '25/11/2021', NULL, '25/11/2021'),
 (3, '6376856954', 'rahul@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '25/11/2021', NULL, '25/11/2021'),
 (4, '7124585652', 'ravi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 0, '25/11/2021', NULL, '25/11/2021'),
-(5, '5568445448', 'm', 'e10adc3949ba59abbe56e057f20f883e', 1, NULL, NULL, NULL),
-(7, '09602065385', 'mpatodiya13@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1, '01/12/2021', NULL, '01/12/2021');
+(5, '5568445448', 'm', '81dc9bdb52d04dc20036dbd8313ed055', 1, NULL, NULL, NULL),
+(8, '9602065384', 'mpatodiya13@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 1, '02/12/2021', NULL, '02/12/2021');
 
 -- --------------------------------------------------------
 
@@ -139,8 +164,8 @@ INSERT INTO `users_profile` (`id`, `user_id`, `first_name`, `last_name`, `gender
 (2, 2, 'deepak', 'saini', '', '', '', '', '25/11/2021', NULL, '25/11/2021'),
 (3, 3, 'rahul', 'singh', 'Male', '2021-11-02', 'adfadsf', '3bc1cc85e9fa93e609e7c85dfec94689.jpg', '25/11/2021', NULL, '25/11/2021'),
 (4, 4, 'ravi', 'sharma', '', '', '', '', '25/11/2021', NULL, '25/11/2021'),
-(6, 5, 'manish', 'patodiya', 'Male', '2021-11-10', 'asdf', '561eff11d0cef09780eee1fe1f6be760.jpg', NULL, NULL, '30/11/2021'),
-(8, 7, 'Manish', 'Patodiya', '', '', '', '', '01/12/2021', NULL, '01/12/2021');
+(6, 5, 'manish', 'patodiya', 'Male', '2021-11-10', 'asdf', '561eff11d0cef09780eee1fe1f6be760.jpg', NULL, NULL, '02/12/2021'),
+(9, 8, 'Manish', 'Patodiya', 'Male', '2021-12-24', 'Bawari gate,nawalgarh', '7cc03fa62434a2ab3bba890b537aa028.jpg', '02/12/2021', NULL, '02/12/2021');
 
 --
 -- Indexes for dumped tables
@@ -157,6 +182,12 @@ ALTER TABLE `articles`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `tags`
+--
+ALTER TABLE `tags`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -188,19 +219,25 @@ ALTER TABLE `articles`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `tags`
+--
+ALTER TABLE `tags`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users_profile`
 --
 ALTER TABLE `users_profile`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables

@@ -20,14 +20,14 @@ class Tag extends BaseController
         $this->encrypter = \config\Services::encrypter();
         $this->tagmodel = model('TagsModel');
         $this->pager = \Config\Services::pager();
-        $this->perPage = 10;
+        $this->perPage = 1;
         helper('common');
     }
 
     public function index()
     {
         $pager = $this->pager;
-        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') - 2 : 1;
+        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') : 1;
         $perPage = $this->perPage;
         $total = $this->tagmodel->getCount();
         $pager->makeLinks($page, $perPage, $total);

@@ -27,7 +27,7 @@ class Users extends BaseController
     public function index()
     {
         $pager = $this->pager;
-        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') - 2 : 1;
+        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') : 1;
         $perPage = $this->perPage;
         $total = $this->usermodel->getCount();
         $pager->makeLinks($page, $perPage, $total);

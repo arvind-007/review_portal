@@ -21,7 +21,7 @@ class Article extends BaseController
         $this->articlemodel = model('ArticlesModel');
         $this->categoriesmodel = model('CategoriesModel');
         $this->pager = \Config\Services::pager();
-        $this->perPage = 10;
+        $this->perPage = 1;
         helper('common');
     }
 
@@ -29,7 +29,7 @@ class Article extends BaseController
     {
         $cmodel = $this->categoriesmodel;
         $pager = $this->pager;
-        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') - 2 : 1;
+        $page = $this->request->getGet('page') > 2 ? $this->request->getGet('page') : 1;
         $perPage = $this->perPage;
         $total = $this->articlemodel->getCount();
         $pager->makeLinks($page, $perPage, $total);

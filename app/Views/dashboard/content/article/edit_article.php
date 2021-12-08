@@ -11,7 +11,15 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Tags</label>
-                        <input type="text" name="tags" class="form-control" id="tags">
+                        <select class="selectpicker form-select" id="tags" name="tags[]" multiple
+                            data-allow-clear="true" data-show-all-suggestions="true">
+                            <option value="" selected>tags</option>
+                            <?php
+for ($i = 0; $i < count($tags); $i++) {
+    echo "<option value=" . $tags[$i]['tag'] . ">" . $tags[$i]['tag'] . "</option>";
+}
+?>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Category</label>

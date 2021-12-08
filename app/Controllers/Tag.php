@@ -20,7 +20,7 @@ class Tag extends BaseController
         $this->encrypter = \config\Services::encrypter();
         $this->tagmodel = model('TagsModel');
         $this->pager = \Config\Services::pager();
-        $this->perPage = 1;
+        $this->perPage = 10;
         helper('common');
     }
 

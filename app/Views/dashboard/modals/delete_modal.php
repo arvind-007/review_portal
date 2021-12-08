@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-dark" data-bs-dismiss="modal">Cancel</button>
+                    <a class="btn btn-dark" data-bs-dismiss="modal">Cancel</a>
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </form>

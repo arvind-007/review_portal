@@ -43,11 +43,10 @@ echo view('dashboard/sidebar/sidebar');
             </div>
         </div>
     </section>
-
     <?php echo view('dashboard/content/article/edit_article') ?>
     <?php echo view('dashboard/content/article/view_article') ?>
 </div>
-<script src="<?php echo base_url('js/articles.js') ?>"></script>
+<script src="<?php echo base_url('js/articles.js') ?>" type="module"></script>
 <?php
 echo view('dashboard/modals/delete_modal');
 echo view('dashboard/footer/footer');

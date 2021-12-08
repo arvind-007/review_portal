@@ -1,6 +1,7 @@
+import Tags from "./select.tags.js";
 $(function() {
-    articlesTable = () => {
-        articles = {
+    var articlesTable = () => {
+        var articles = {
             url: BASE_URL + "/article/showArticles?page=" + PAGE,
             dataType: "json",
             success: function(res) {
@@ -74,13 +75,21 @@ $(function() {
             dataType: "json",
             success: function(res) {
                 $("#title").val(res.articles[0].title);
-                $("#tags").val(res.articles[0].tags);
+                console.log(res.articles[0].tags);
+                var optionsToSelect = (res.articles[0].tags).split(",");
+                console.log(optionsToSelect);
+                optionsToSelect.map((itm) => {
+                    $("#tags option[value=" + itm + "]").attr(
+                        "selected",
+                        true
+                    );
+                });
+                Tags.init();
                 $("#category option[value=" + res.articles[0].category_id + "]").prop(
                     "selected",
                     true
                 );
                 editor1.setHTMLCode(res.articles[0].body);
-                // $("#art-body").val(res.articles[0].body);
                 $("#uid").val(id);
             },
             error: function(err) {
@@ -94,15 +103,15 @@ $(function() {
         window.location.reload();
     });
 
+    $("#insert-xml").click(function() {
+        $("#mdl-add-xml").modal("show");
+    });
+
     $("#frm-add-article").validate({
         rules: {
             title: {
                 required: true,
                 minlength: 5,
-            },
-            tags: {
-                required: true,
-                minlength: 3,
             },
             category: {
                 required: true,
@@ -113,6 +122,7 @@ $(function() {
             },
         },
         submitHandler: function(form, event) {
+            event.preventDefault();
             let article = {
                 url: BASE_URL + "article/addArticle",
                 data: $(form).serialize(),
@@ -189,6 +199,36 @@ $(function() {
         };
         $.ajax(dlt);
     });
+
+    $("#frm-add-xml").submit(function(event) {
+        event.preventDefault();
+        let form_data = new FormData(this);
+        console.log(form_data);
+        let add = {
+            url: BASE_URL + "article/addxmlfile",
+            method: "post",
+            dataType: "json",
+            data: form_data,
+            processData: false,
+            contentType: false,
+            success: function(res) {
+                $("#mdl-add-xml").modal("hide");
+                $(".modal-backdrop").remove();
+                if (res.status == 1) {
+                    // $("#success-msg").html(res.msg);
+                    // $("#success-msg").show();
+                    // categoriesTable();
+                    // setTimeout(function() {
+                    //     $("#success-msg").hide();
+                    // }, 3000);
+                    window.location = BASE_URL + "article";
+                }
+            },
+            error: function(err) {},
+        };
+        $.ajax(add);
+    })
+
 
 
 });

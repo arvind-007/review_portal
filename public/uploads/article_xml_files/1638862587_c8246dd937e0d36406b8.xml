@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st January 2019//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_190101.dtd">
+<PubmedArticleSet>
+  <PubmedArticle>
+    <MedlineCitation Status="Publisher" Owner="NLM">
+      <PMID Version="1">34773595</PMID>
+      <DateRevised>
+        <Year>2021</Year>
+        <Month>11</Month>
+        <Day>13</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">1720-8386</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <PubDate>
+              <Year>2021</Year>
+              <Month>Nov</Month>
+              <Day>13</Day>
+            </PubDate>
+          </JournalIssue>
+          <Title>Journal of endocrinological investigation</Title>
+          <ISOAbbreviation>J Endocrinol Invest</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>2Predictors of disease recurrence after curative surgery for nonfunctioning pancreatic neuroendocrine neoplasms (NF-PanNENs): a systematic review and meta-analysis.</ArticleTitle>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1007/s40618-021-01705-2</ELocationID>
+        <Abstract>
+          <AbstractText Label="PURPOSE" NlmCategory="OBJECTIVE">Patients submitted to curative surgery for non-functioning pancreatic neuroendocrine neoplasms (NF-PanNENs) exhibit a variable risk of disease relapse. Aims of this meta-analysis were to estimate the rate of disease recurrence and to investigate the risk factors for disease relapse in patients submitted to curative surgery for NF-PanNENs.</AbstractText>
+          <AbstractText Label="METHODS" NlmCategory="METHODS">Medline/Pubmed and Web of Science databases were searched for relevant studies. A meta-regression analysis was performed to investigate the source of recurrence rate heterogeneity. Pooled hazard ratios (HRs) and 95% confidence intervals (95% CI) were used to assess the effect of each possible prognostic factor on disease-free survival.</AbstractText>
+          <AbstractText Label="RESULTS" NlmCategory="RESULTS">Fifteen studies, involving 2754 patients submitted to curative surgery for NF-PanNENs, were included. The pooled rate of disease recurrence was 21% (95% CI 15-26%). Study quality (Odds ratio, OR 0.94, P = 0.016) and G3-PanNENs rate (OR 2.18, P = 0.040) independently predicted the recurrence rate variability. Nodal metastases (HR 1.63, P &lt; 0.001), tumor grade G2-G3 (G1 versus G2: HR 1.72, P &lt; 0.001, G1 versus G3 HR 2.57, P &lt; 0.001), microvascular (HR 1.25, P = 0.046) and perineural (HR 1.29, P = 0.019) invasion were identified as significant prognostic factors. T stage (T1-T2 versus T3-T4, P = 0.253) and status of resection margins (R0 versus R1, P = 0.173) did not show any significant relationship with NF-PanNENs recurrence.</AbstractText>
+          <AbstractText Label="CONCLUSION" NlmCategory="CONCLUSIONS">Disease relapse occurs in approximately one out of five patients submitted to curative surgery for NF-PanNENs. Nodal involvement, tumor grade, microvascular and perineural invasion are relevant prognostic factors, that should be taken into account for follow-up and for possible trials investigating adjuvant or neoadjuvant treatments.</AbstractText>
+          <CopyrightInformation>© 2021. Italian Society of Endocrinology (SIE).</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y" EqualContrib="Y">
+            <LastName>kumar</LastName>
+            <ForeName>Ashok </ForeName>
+            <Initials>V</Initials>
+            <AffiliationInfo>
+              <Affiliation>Surgery Unit, Pancreas Translational &amp; Clinical Research Center, San Raffaele Hospital Neuroendocrine Tumor Group (ENETS Center of Excellence), IRCCS San Raffaele Scientific Institute, Milan, Italy.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>Vita-Salute San Raffaele University, Via Olgettina 60, 20132, Milan, Italy.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="Y">
+            <LastName>Riya</LastName>
+            <ForeName>Karan</ForeName>
+            <Initials>C</Initials>
+            <AffiliationInfo>
+              <Affiliation>Division of Pancreatic Surgery, IRCCS Azienda Ospedaliero Universitaria Di Bologna, Bologna, Italy.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>Department of Internal Medicine and Surgery (DIMEC), S. Orsola-Malpighi Hospital, Alma Mater Studiorum, University of Bologna, Bologna, Italy.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Partelli</LastName>
+            <ForeName>S</ForeName>
+            <Initials>S</Initials>
+            <Identifier Source="ORCID">http://orcid.org/0000-0001-8938-6170</Identifier>
+            <AffiliationInfo>
+              <Affiliation>Pancreatic Surgery Unit, Pancreas Translational &amp; Clinical Research Center, San Raffaele Hospital Neuroendocrine Tumor Group (ENETS Center of Excellence), IRCCS San Raffaele Scientific Institute, Milan, Italy. partelli.stefano@hsr.it.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>Vita-Salute San Raffaele University, Via Olgettina 60, 20132, Milan, Italy. partelli.stefano@hsr.it.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Guarneri</LastName>
+            <ForeName>G</ForeName>
+            <Initials>G</Initials>
+            <AffiliationInfo>
+              <Affiliation>Pancreatic Surgery Unit, Pancreas Translational &amp; Clinical Research Center, San Raffaele Hospital Neuroendocrine Tumor Group (ENETS Center of Excellence), IRCCS San Raffaele Scientific Institute, Milan, Italy.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Ingaldi</LastName>
+            <ForeName>C</ForeName>
+            <Initials>C</Initials>
+            <AffiliationInfo>
+              <Affiliation>Division of Pancreatic Surgery, IRCCS Azienda Ospedaliero Universitaria Di Bologna, Bologna, Italy.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>Department of Internal Medicine and Surgery (DIMEC), S. Orsola-Malpighi Hospital, Alma Mater Studiorum, University of Bologna, Bologna, Italy.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y" EqualContrib="Y">
+            <LastName>Falconi</LastName>
+            <ForeName>M</ForeName>
+            <Initials>M</Initials>
+            <AffiliationInfo>
+              <Affiliation>Pancreatic Surgery Unit, Pancreas Translational &amp; Clinical Research Center, San Raffaele Hospital Neuroendocrine Tumor Group (ENETS Center of Excellence), IRCCS San Raffaele Scientific Institute, Milan, Italy.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>Vita-Salute San Raffaele University, Via Olgettina 60, 20132, Milan, Italy.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D016454">Review</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>13</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>Italy</Country>
+        <MedlineTA>J Endocrinol Invest</MedlineTA>
+        <NlmUniqueID>7806594</NlmUniqueID>
+        <ISSNLinking>0391-4097</ISSNLinking>
+      </MedlineJournalInfo>
+      <CitationSubset>IM</CitationSubset>
+      <KeywordList Owner="NOTNLM">
+        <Keyword MajorTopicYN="N">Curative surgery</Keyword>
+        <Keyword MajorTopicYN="N">Nonfunctioning</Keyword>
+        <Keyword MajorTopicYN="N">Pancreatic neuroendocrine neoplasms</Keyword>
+        <Keyword MajorTopicYN="N">Prognostic factors</Keyword>
+        <Keyword MajorTopicYN="N">Recurrence</Keyword>
+        <Keyword MajorTopicYN="N">Relapse</Keyword>
+      </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2021</Year>
+          <Month>07</Month>
+          <Day>26</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>03</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>13</Day>
+          <Hour>12</Hour>
+          <Minute>10</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>14</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>14</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>aheadofprint</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">34773595</ArticleId>
+        <ArticleId IdType="doi">10.1007/s40618-021-01705-2</ArticleId>
+        <ArticleId IdType="pii">10.1007/s40618-021-01705-2</ArticleId>
+      </ArticleIdList>
+      <ReferenceList>
+        <Reference>
+          <Citation>Kuo EJ, Salem RR (2013) Population-level analysis of pancreatic neuroendocrine tumors 2 cm or less in size. Ann Surg Oncol 20:2815–2821. https://doi.org/10.1245/s10434-013-3005-7</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="doi">10.1245/s10434-013-3005-7</ArticleId>
+            <ArticleId IdType="pubmed">23771245</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Dasari A, Shen C, Halperin D et al (2017) Trends in the incidence, prevalence, and survival outcomes in patients with neuroendocrine tumors in the United States. JAMA Oncol 3:1335–1342. https://doi.org/10.1001/jamaoncol.2017.0589</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="doi">10.1001/jamaoncol.2017.0589</ArticleId>
+            <ArticleId IdType="pubmed">28448665</ArticleId>
+            <ArticleId IdType="pmcid">5824320</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        
+       
+        
+        <Reference>
+          <Citation>Tanaka M, Heckler M, Mihaljevic AL et al (2021) Systematic review and metaanalysis of lymph node metastases of resected pancreatic neuroendocrine tumors. Ann Surg Oncol 28:1614–1624. https://doi.org/10.1245/s10434-020-08850-7</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="doi">10.1245/s10434-020-08850-7</ArticleId>
+            <ArticleId IdType="pubmed">32720049</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Zhang X-F, Wu Z, Cloyd J et al (2019) Margin status and long-term prognosis of primary pancreatic neuroendocrine tumor after curative resection: results from the US neuroendocrine tumor study group. Surgery 165:548–556. https://doi.org/10.1016/j.surg.2018.08.015</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="doi">10.1016/j.surg.2018.08.015</ArticleId>
+            <ArticleId IdType="pubmed">30278986</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Edge SB, Byrd DR, Compton CC, Fritz AG, Greene FLTA (eds) (2010) AJCC cancer staging manual, 7th edn. Springer, Lyon</Citation>
+        </Reference>
+      </ReferenceList>
+    </PubmedData>
+  </PubmedArticle>
+  <PubmedArticle>
+    <MedlineCitation Status="Publisher" Owner="NLM">
+      <PMID Version="1">34773596</PMID>
+      <DateRevised>
+        <Year>2021</Year>
+        <Month>11</Month>
+        <Day>13</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Print">2193-8253</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <PubDate>
+              <Year>2021</Year>
+              <Month>Nov</Month>
+              <Day>13</Day>
+            </PubDate>
+          </JournalIssue>
+          <Title>Neurology and therapy</Title>
+          <ISOAbbreviation>Neurol Ther</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Functional Near-Infrared Spectroscopy as a Target Navigator for rTMS Modulation in Patients with Hemiplegia: A Randomized Control Study.</ArticleTitle>
+        <ELocationID EIdType="doi" ValidYN="Y">10.1007/s40120-021-00300-0</ELocationID>
+        <Abstract>
+          <AbstractText Label="INTRODUCTION" NlmCategory="BACKGROUND">Although repetitive transcranial magnetic stimulation (rTMS) is efficacious for motor neuromodulation in stroke survivors, high interindividual variability for responsiveness remains a concern. Target probing on the skull using a proper brain-mapping technique may help overcome this challenge. This study assessed the feasibility of functional near-infrared spectroscopy (fNIRS) as a target navigator in rTMS treatment for motor facilitation in patients with stroke.</AbstractText>
+          <AbstractText Label="METHODS" NlmCategory="METHODS">Fifty-one patients with stroke were enrolled in this randomized controlled study. The patients were assigned to three groups: fNIRS-guided rTMS treatment (fNIRS group, n = 20), motor evoked potential (MEP)-guided rTMS treatment (MEP group, n = 16), and sham (n = 15) group. Motor assessments, including Fugl-Meyer Assessment (FMA), Wolf Motor Function Test (WMFT), and muscle strength, were conducted at baseline and after the 10-session rTMS treatment.</AbstractText>
+          <AbstractText Label="RESULTS" NlmCategory="RESULTS">The fNIRS-guided hotspot (fNIRS-HS) was obtained for each patient, even those for whom the MEP-guided hotspot was undetectable. Both intervention groups exhibited significant improvements in muscle strength, FMA, and WMFT scores (P &lt; 0.001) compared with the sham group. The fNIRS group achieved significantly greater improvement in elbow function (P = 0.001) than the MEP group.</AbstractText>
+          <AbstractText Label="CONCLUSION" NlmCategory="CONCLUSIONS">fNIRS can be a reliable tool for hotspot navigation for motor neuromodulation in patients with stroke. With high sensitivity to cortical oxygenation changes, this navigation system achieved a superior outcome to the traditional MEP-based method in patients with stroke. fNIRS-based systems may also facilitate the integration of machine learning, thus enabling precision medicine for neuromodulation.</AbstractText>
+          <AbstractText Label="TRIAL REGISTRATION" NlmCategory="BACKGROUND">https://clinicaltrials.gov ; Unique identifier: NCT02006615.</AbstractText>
+          <CopyrightInformation>© 2021. The Author(s).</CopyrightInformation>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Chang</LastName>
+            <ForeName>Pang-Wei</ForeName>
+            <Initials>PW</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Physical Medicine and Rehabilitation, Taipei Veterans General Hospital, Taipei, Taiwan.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Lu</LastName>
+            <ForeName>Chia-Feng</ForeName>
+            <Initials>CF</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Biomedical Imaging and Radiological Sciences, School of Biomedical Science and Engineering, National Yang Ming Chiao Tung University, Taipei, Taiwan.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>Institute of Biophotonics, National Yang Ming Chiao Tung University, Taipei, Taiwan.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Chang</LastName>
+            <ForeName>Shin-Tsu</ForeName>
+            <Initials>ST</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Physical Medicine and Rehabilitation, Kaohsiung Veterans General Hospital, Kaohsiung, Taiwan.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Tsai</LastName>
+            <ForeName>Po-Yi</ForeName>
+            <Initials>PY</Initials>
+            <Identifier Source="ORCID">http://orcid.org/0000-0003-4804-5251</Identifier>
+            <AffiliationInfo>
+              <Affiliation>Department of Physical Medicine and Rehabilitation, Taipei Veterans General Hospital, Taipei, Taiwan. pytsai@vghtpe.gov.tw.</Affiliation>
+            </AffiliationInfo>
+            <AffiliationInfo>
+              <Affiliation>School of Medicine, National Yang Ming Chiao Tung University, Taipei, Taiwan. pytsai@vghtpe.gov.tw.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <DataBankList CompleteYN="Y">
+          <DataBank>
+            <DataBankName>ClinicalTrials.gov</DataBankName>
+            <AccessionNumberList>
+              <AccessionNumber>NCT02006615</AccessionNumber>
+            </AccessionNumberList>
+          </DataBank>
+        </DataBankList>
+        <GrantList CompleteYN="Y">
+          <Grant>
+            <GrantID>108-2314-B-075-047</GrantID>
+            <Agency>Ministry of Science and Technology, Taiwan</Agency>
+            <Country/>
+          </Grant>
+          <Grant>
+            <GrantID>107-2314-B-075-010</GrantID>
+            <Agency>Ministry of Science and Technology, Taiwan</Agency>
+            <Country/>
+          </Grant>
+          <Grant>
+            <GrantID>V105C-042</GrantID>
+            <Agency>Taipei Veterans General Hospital</Agency>
+            <Country/>
+          </Grant>
+        </GrantList>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>13</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>New Zealand</Country>
+        <MedlineTA>Neurol Ther</MedlineTA>
+        <NlmUniqueID>101637818</NlmUniqueID>
+        <ISSNLinking>2193-6536</ISSNLinking>
+      </MedlineJournalInfo>
+      <KeywordList Owner="NOTNLM">
+        <Keyword MajorTopicYN="N">Cortical excitability</Keyword>
+        <Keyword MajorTopicYN="N">Motor function</Keyword>
+        <Keyword MajorTopicYN="N">Near-infrared spectroscopy (NIRS)</Keyword>
+        <Keyword MajorTopicYN="N">Repetitive transcranial magnetic stimulation (rTMS)</Keyword>
+        <Keyword MajorTopicYN="N">Stroke</Keyword>
+      </KeywordList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2021</Year>
+          <Month>09</Month>
+          <Day>16</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>01</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>13</Day>
+          <Hour>12</Hour>
+          <Minute>10</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>14</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2021</Year>
+          <Month>11</Month>
+          <Day>14</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>aheadofprint</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">34773596</ArticleId>
+        <ArticleId IdType="doi">10.1007/s40120-021-00300-0</ArticleId>
+        <ArticleId IdType="pii">10.1007/s40120-021-00300-0</ArticleId>
+      </ArticleIdList>
+      <ReferenceList>
+        <Reference>
+          <Citation>Virani SS, Alonso A, Benjamin EJ, et al. Heart disease and stroke statistics-2020 update: a report from the American Heart Association. Circulation. 2020;141(9):e139–596.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">31992061</ArticleId>
+            <ArticleId IdType="pmcid">31992061</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Hoogendam JM, Ramakers GM, Di Lazzaro V. Physiology of repetitive transcranial magnetic stimulation of the human brain. Brain Stimul. 2010;3(2):95–118.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">20633438</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Hsu WY, Cheng CH, Liao KK, Lee IH, Lin YY. Effects of repetitive transcranial magnetic stimulation on motor functions in patients with stroke: a meta-analysis. Stroke. 2012;43(7):1849–57.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">22713491</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Huang YZ, Edwards MJ, Rounis E, Bhatia KP, Rothwell JC. Theta burst stimulation of the human motor cortex. Neuron. 2005;45(2):201–6.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">15664172</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Iezzi E, Suppa A, Conte A, Li Voti P, Bologna M, Berardelli A. Short-term and long-term plasticity interaction in human primary motor cortex. Eur J Neurosci. 2011;33(10):1908–15.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">21488986</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Ackerley SJ, Stinear CM, Barber PA, Byblow WD. Combining theta burst stimulation with training after subcortical stroke. Stroke. 2010;41(7):1568–72.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">20489170</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Dionísio A, Duarte IC, Patrício M, Castelo-Branco M. The use of repetitive transcranial magnetic stimulation for stroke rehabilitation: a systematic review. J Stroke Cerebrovasc Dis. 2018;27(1):1–31.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">29111342</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Lefaucheur JP, Aleman A, Baeken C, et al. Evidence-based guidelines on the therapeutic use of repetitive transcranial magnetic stimulation (rTMS): An update (2014–2018). Clin Neurophysiol. 2020;131(2):474–528.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">31901449</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Hamada M, Murase N, Hasan A, Balaratnam M, Rothwell JC. The role of interneuron networks in driving human motor cortical plasticity. Cereb Cortex. 2013;23(7):1593–605.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">22661405</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Nettekoven C, Volz LJ, Leimbach M, et al. Inter-individual variability in cortical excitability and motor network connectivity following multiple blocks of rTMS. Neuroimage. 2015;118:209–18.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">26052083</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Huo C, Xu G, Li Z, et al. Limb linkage rehabilitation training-related changes in cortical activation and effective connectivity after stroke: a functional near-infrared spectroscopy study. Sci Rep. 2019;9(1):6226.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">30996244</ArticleId>
+            <ArticleId IdType="pmcid">6470232</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Ferrari M, Quaresima V. A brief review on the history of human functional near-infrared spectroscopy (fNIRS) development and fields of application. Neuroimage. 2012;63(2):921–35.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">22510258</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Villringer A, Chance B. Non-invasive optical spectroscopy and imaging of human brain function. Trends Neurosci. 1997;20(10):435–42.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">9347608</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Yang M, Yang Z, Yuan T, Feng W, Wang P. A systemic review of functional near-infrared spectroscopy for stroke: current application and future directions. Front Neurol. 2019;10:58.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">30804877</ArticleId>
+            <ArticleId IdType="pmcid">6371039</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Drenckhahn C, Koch SP, Dümmler J, Kohl-Bareis M, Steinbrink J, Dreier JP. A validation study of the use of near-infrared spectroscopy imaging in primary and secondary motor areas of the human brain. Epilepsy Behav. 2015;49:118–25.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">25976181</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Koenraadt KL, Munneke MA, Duysens J, Keijsers NL. TMS: a navigator for NIRS of the primary motor cortex? J Neurosci Methods. 2011;201(1):142–8.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">21835198</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Curtin A, Tong S, Sun J, Wang J, Onaral B, Ayaz H. A systematic review of integrated functional near-infrared spectroscopy (fNIRS) and transcranial magnetic stimulation (TMS) studies. Front Neurosci. 2019;13:84.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">30872985</ArticleId>
+            <ArticleId IdType="pmcid">6403189</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Furubayashi T, Mochizuki H, Terao Y, et al. Cortical hemoglobin concentration changes underneath the coil after single-pulse transcranial magnetic stimulation: a near-infrared spectroscopy study. J Neurophysiol. 2013;109(6):1626–37.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">23274310</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Quaresima V, Ferrari M. Functional near-infrared spectroscopy (fNIRS) for assessing cerebral cortex function during human behavior in natural/social situations: a concise review. Organ Res Methods. 2019;22(1):46–68.</Citation>
+        </Reference>
+        <Reference>
+          <Citation>Cao J, Huppert TJ, Grover P, Kainerstorfer JM. Enhanced spatiotemporal resolution imaging of neuronal activity using joint electroencephalography and diffuse optical tomography. Neurophotonics. 2021;8(1): 015002.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">33437847</ArticleId>
+            <ArticleId IdType="pmcid">7778454</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Sharma G, Roy CS. Design of NIRS probe based on computational model to find out the optimal location for non-invasive brain stimulation. J Med Syst. 2018;42(12):244.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">30374669</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Faul F, Erdfelder E, Lang AG, Buchner A. G*Power 3: a flexible statistical power analysis program for the social, behavioral, and biomedical sciences. Behav Res Methods. 2007;39(2):175–91.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">17695343</ArticleId>
+            <ArticleId IdType="pmcid">17695343</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Schmitz CH, Klemer DP, Hardin R, et al. Design and implementation of dynamic near-infrared optical tomographic imaging instrumentation for simultaneous dual-breast measurements. Appl Opt. 2005;44(11):2140–53.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">15835360</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Kocsis L, Herman P, Eke A. The modified Beer–Lambert law revisited. Phys Med Biol. 2006;51(5):N91–8.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">16481677</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Piper SK, Krueger A, Koch SP, et al. A wearable multi-channel fNIRS system for brain imaging in freely moving subjects. Neuroimage. 2014;85 Pt 1(1):64–71.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">23810973</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Antoniadis A, Bigot J, Sapatinas T. Wavelet estimators in nonparametric regression: a comparative simulation study. J Stat Softw. 2001;6(6):1–83.</Citation>
+        </Reference>
+        <Reference>
+          <Citation>Chipman HA, Kolaczyk ED, McCulloch RE. Adaptive bayesian wavelet shrinkage. J Am Stat Assoc. 1997;92(440):1413–21.</Citation>
+        </Reference>
+        <Reference>
+          <Citation>Molavi B, Dumont GA. Wavelet-based motion artifact removal for functional near-infrared spectroscopy. Physiol Meas. 2012;33(2):259–70.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">22273765</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Cui X, Bray S, Reiss AL. Functional near infrared spectroscopy (NIRS) signal improvement based on negative correlation between oxygenated and deoxygenated hemoglobin dynamics. Neuroimage. 2010;49(4):3039–46.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">19945536</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Huppert TJ, Diamond SG, Franceschini MA, Boas DA. HomER: a review of time-series analysis methods for near-infrared spectroscopy of the brain. Appl Opt. 2009;48(10):D280–98.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">19340120</ArticleId>
+            <ArticleId IdType="pmcid">2761652</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Jiang Y, Li Z, Zhao Y, et al. Targeting brain functions from the scalp: Transcranial brain atlas based on large-scale fMRI data synthesis. Neuroimage. 2020;210: 116550.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">31981781</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Fugl-Meyer AR, Jääskö L, Leyman I, Olsson S, Steglind S. The post-stroke hemiplegic patient. 1. A method for evaluation of physical performance. Scand J Rehabil Med. 1975;7(1):13–31.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">1135616</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Wolf SL, Catlin PA, Ellis M, Archer AL, Morgan B, Piacentino A. Assessing Wolf motor function test as outcome measure for research in patients after stroke. Stroke. 2001;32(7):1635–9.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">11441212</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Wolf SL, Thompson PA, Morris DM, et al. The EXCITE trial: attributes of the Wolf Motor Function Test in patients with subacute stroke. Neurorehabil Neural Repair. 2005;19(3):194–205.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">16093410</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Rossini PM, Burke D, Chen R, et al. Non-invasive electrical and magnetic stimulation of the brain, spinal cord, roots and peripheral nerves: Basic principles and procedures for routine clinical and research application. An updated report from an I.F.C.N. Committee. Clin Neurophysiol. 2015;126(6):1071–107.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">25797650</ArticleId>
+            <ArticleId IdType="pmcid">6350257</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Hummel FC, Celnik P, Pascual-Leone A, Fregni F, Byblow WD, Buetefisch CM, et al. Controversy: noninvasive and invasive cortical stimulation show efficacy in treating stroke patients. Brain Stimul. 2008;1:370–82.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">20633395</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Murase N, Duque J, Mazzocchio R, Cohen LG. Influence of interhemispheric interactions on motor function in chronic stroke. Ann Neurol. 2004;55:400–9.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">14991818</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Yeung MK, Chan AS. Functional near-infrared spectroscopy reveals decreased resting oxygenation levels and task-related oxygenation changes in mild cognitive impairment and dementia: a systematic review. J Psychiatr Res. 2020;124:58–76.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">32120065</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Fallgatter AJ, Roesler M, Sitzmann L, Heidrich A, Mueller TJ, Strik WK. Loss of functional hemispheric asymmetry in Alzheimer’s dementia assessed with near-infrared spectroscopy. Brain Res Cogn Brain Res. 1997;6(1):67–72.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">9395850</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Stuart S, Vitorio R, Morris R, Martini DN, Fino PC, Mancini M. Cortical activity during walking and balance tasks in older adults and in people with Parkinson’s disease: a structured review. Maturitas. 2018;113:53–72.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">29903649</ArticleId>
+            <ArticleId IdType="pmcid">6448561</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Pinti P, Tachtsidis I, Hamilton A, et al. The present and future use of functional near-infrared spectroscopy (fNIRS) for cognitive neuroscience. Ann N Y Acad Sci. 2020;1464(1):5–29.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">30085354</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Fazli S, Mehnert J, Steinbrink J, et al. Enhanced performance by a hybrid NIRS-EEG brain computer interface. Neuroimage. 2012;59(1):519–29.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">21840399</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Giacalone G, Zanoletti M, Re R, et al. Time-domain near-infrared spectroscopy in acute ischemic stroke patients. Neurophotonics. 2019;6(1): 015003.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">30796883</ArticleId>
+            <ArticleId IdType="pmcid">6365799</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Noguchi Y, Watanabe E, Sakai KL. An event-related optical topography study of cortical activation induced by single-pulse transcranial magnetic stimulation. Neuroimage. 2003;19(1):156–62.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">12781735</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Herwig U, Kölbel K, Wunderlich AP, et al. Spatial congruence of neuronavigated transcranial magnetic stimulation and functional neuroimaging. Clin Neurophysiol. 2002;113(4):462–8.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">11955990</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Enomoto H, Ugawa Y, Hanajima R, et al. Decreased sensory cortical excitability after 1 Hz rTMS over the ipsilateral primary motor cortex. Clin Neurophysiol. 2001;112(11):2154–8.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">11682355</ArticleId>
+          </ArticleIdList>
+        </Reference>
+        <Reference>
+          <Citation>Yamamoto T, Maki A, Kadoya T, et al. Arranging optical fibres for the spatial resolution improvement of topographical images. Phys Med Biol. 2002;47(18):3429–40.</Citation>
+          <ArticleIdList>
+            <ArticleId IdType="pubmed">12375830</ArticleId>
+          </ArticleIdList>
+        </Reference>
+      </ReferenceList>
+    </PubmedData>
+  </PubmedArticle>
+  <DeleteCitation>
+<PMID Version="1">11063250</PMID>
+<PMID Version="1">34582407</PMID>
+<PMID Version="1">34693671</PMID>
+<PMID Version="1">34760502</PMID>
+<PMID Version="1">34763336</PMID>
+<PMID Version="1">34763337</PMID>
+<PMID Version="1">34763339</PMID>
+<PMID Version="1">34763566</PMID>
+<PMID Version="1">34763575</PMID>
+<PMID Version="1">34766196</PMID>
+<PMID Version="1">34766345</PMID>
+<PMID Version="1">34766346</PMID>
+<PMID Version="1">34766552</PMID>
+<PMID Version="1">34766553</PMID>
+<PMID Version="1">34766828</PMID>
+<PMID Version="1">34766842</PMID>
+<PMID Version="1">34766945</PMID>
+<PMID Version="1">34767266</PMID>
+<PMID Version="1">34767539</PMID>
+</DeleteCitation>
+</PubmedArticleSet>

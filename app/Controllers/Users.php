@@ -4,18 +4,6 @@ namespace App\Controllers;
 
 use App\Libraries\PDF;
 
-// Import library
-
-$pdf = new PDF();
-// Column headings
-$header = array('S.No.', 'Name', 'Email', 'Mobile');
-// Data loading
-$data = ['mansh', "piyush"];
-$pdf->SetFont('Arial', '', 14);
-$pdf->AddPage();
-$pdf->FancyTable($header, $data);
-$pdf->Output();
-
 class Users extends BaseController
 {
     public $usermodel;
@@ -93,4 +81,19 @@ class Users extends BaseController
             "msg" => "User deleted succesfully!",
         ]);
     }
+
+    public function exportToPDF()
+    {
+        $usermodel = $this->usermodel;
+        $pdf = new PDF();
+        $header = array('S.No.', 'Name', 'Email', 'Mobile');
+        $data = $usermodel->getFieldsForJoin('first_name, last_name, email,mobile', 'users_profile up', 'up.user_id=users.id');
+        // prd($data);
+        $pdf->SetFont('Arial', '', 14);
+        $pdf->AddPage();
+        $pdf->FancyTable($header, $data);
+        $this->response->setContentType("application/pdf");
+        $pdf->Output();
+    }
+
 }

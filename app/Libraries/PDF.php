@@ -1,7 +1,7 @@
 <?php
 namespace App\Libraries;
 
-use App\ThirdParty\fpdf\FPDF;
+include APPPATH . "ThirdParty/fpdf/fpdf.php";
 
 class PDF extends FPDF
 {
@@ -38,13 +38,15 @@ class PDF extends FPDF
         $this->SetFont('');
         // Data
         $fill = false;
+        $count = 1;
         foreach ($data as $row) {
-            $this->Cell($w[0], 8, $row[0], 'B', 0, 'L', $fill);
-            $this->Cell($w[1], 8, $row[1], 'B', 0, 'L', $fill);
-            $this->Cell($w[2], 8, $row[2], 'B', 0, 'L', $fill);
-            $this->Cell($w[3], 8, $row[3], 'B', 0, 'L', $fill);
+            $this->Cell($w[0], 8, $count, 'B', 0, 'L', $fill);
+            $this->Cell($w[1], 8, $row['first_name'] . " " . $row['last_name'], 'B', 0, 'L', $fill);
+            $this->Cell($w[2], 8, $row['email'], 'B', 0, 'L', $fill);
+            $this->Cell($w[3], 8, $row['mobile'], 'B', 0, 'L', $fill);
             $this->Ln();
             $fill = !$fill;
+            $count++;
         }
         // Closing line
         $this->Cell(array_sum($w), 0, '', 'T');

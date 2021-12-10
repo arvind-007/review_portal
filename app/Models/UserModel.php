@@ -25,6 +25,17 @@ class UserModel extends Model
         return $builder->get()->getResultArray();
     }
 
+    public function getFeilds($select, $where = "")
+    {
+        $builder = $this->builder;
+        $builder->select($select);
+        if ($where) {
+            $builder->where($where);
+        }
+        $builder->where('deleted_at is NULL');
+        return $builder->get()->getResultArray();
+    }
+
     //function to get all row in the table
     public function getAll()
     {

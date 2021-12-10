@@ -11,7 +11,8 @@ echo view('dashboard/sidebar/sidebar');
                     <h2 class="fw-lighter">Users</h2>
                 </div>
                 <div class="col-sm-6 text-end">
-                    <!--  -->
+                    <a class="btn" style="background:white;" href="<?=base_url("users/exporttopdf")?>"> PDF</a>
+                    <a class="btn" style="background:white;" href="<?=base_url("users/exporttopdf")?>"> CSV</a>
                 </div>
             </div>
         </div>

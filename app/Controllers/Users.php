@@ -2,6 +2,20 @@
 
 namespace App\Controllers;
 
+use App\Libraries\PDF;
+
+// Import library
+
+$pdf = new PDF();
+// Column headings
+$header = array('S.No.', 'Name', 'Email', 'Mobile');
+// Data loading
+$data = ['mansh', "piyush"];
+$pdf->SetFont('Arial', '', 14);
+$pdf->AddPage();
+$pdf->FancyTable($header, $data);
+$pdf->Output();
+
 class Users extends BaseController
 {
     public $usermodel;
@@ -11,6 +25,7 @@ class Users extends BaseController
     public $perPage;
     public function __construct()
     {
+
         $this->session = \Config\Services::session();
         $this->session->start();
         if (!$this->session->get("is_login")) {

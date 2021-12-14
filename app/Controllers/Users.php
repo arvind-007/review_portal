@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Libraries\PDF;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Users extends BaseController
 {
@@ -13,7 +15,6 @@ class Users extends BaseController
     public $perPage;
     public function __construct()
     {
-
         $this->session = \Config\Services::session();
         $this->session->start();
         if (!$this->session->get("is_login")) {
@@ -93,7 +94,35 @@ class Users extends BaseController
         $pdf->AddPage();
         $pdf->FancyTable($header, $data);
         $this->response->setContentType("application/pdf");
-        $pdf->Output();
+        $pdf->Output("users.pdf", "D");
+    }
+
+    public function exportToExcel()
+    {
+        $usermodel = $this->usermodel;
+        $users = $usermodel->getFieldsForJoin('first_name, last_name, email,mobile', 'users_profile up', 'up.user_id=users.id');
+
+        $fileName = 'users.xlsx';
+        $spreadsheet = new Spreadsheet();
+
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'first_name');
+        $sheet->setCellValue('B1', 'last_name');
+        $sheet->setCellValue('C1', 'email');
+        $sheet->setCellValue('D1', 'mobile');
+        $rows = 2;
+
+        foreach ($users as $val) {
+            $sheet->setCellValue('A' . $rows, $val['first_name']);
+            $sheet->setCellValue('B' . $rows, $val['last_name']);
+            $sheet->setCellValue('C' . $rows, $val['email']);
+            $sheet->setCellValue('D' . $rows, $val['mobile']);
+            $rows++;
+        }
+        $writer = new Xlsx($spreadsheet);
+        $writer->save("uploads/excel/" . $fileName);
+        header("Content-Type: application/vnd.ms-excel");
+        return redirect()->to(base_url() . "/uploads/excel/" . $fileName);
     }
 
 }

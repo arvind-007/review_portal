@@ -12,7 +12,7 @@ echo view('dashboard/sidebar/sidebar');
                 </div>
                 <div class="col-sm-6 text-end">
                     <a class="btn" style="background:white;" href="<?=base_url("users/exporttopdf")?>"> PDF</a>
-                    <a class="btn" style="background:white;" href="<?=base_url("users/exporttopdf")?>"> CSV</a>
+                    <a class="btn" style="background:white;" href="<?=base_url("users/exporttoexcel")?>"> Excel</a>
                 </div>
             </div>
         </div>

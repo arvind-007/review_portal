@@ -21,17 +21,15 @@ echo view('dashboard/sidebar/sidebar');
         <div class="container-fluid">
             <div class="row m-2 rounded">
                 <div class="card border-0  h-100">
-                    <table class="table" id="table-articles">
+                    <table class="table" id="table-category">
                         <thead>
                             <tr>
-                                <th scope="col" style="width:55px" ;>S.No.</th>
                                 <th scope="col" style="width:160px">Image</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
+                        <tbody> </tbody>
                     </table>
                     <nav class="nav justify-content-end">
                         <?=$pager->links();?>
@@ -42,6 +40,7 @@ echo view('dashboard/sidebar/sidebar');
     </section>
 </div>
 <script src="<?php echo base_url('js/categories.js') ?>"></script>
+<script src="//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 <?php
 echo view('dashboard/modals/change_pass_modal');
 echo view('dashboard/modals/edit_category_modal');
@@ -49,3 +48,13 @@ echo view('dashboard/modals/add_category_modal');
 echo view('dashboard/footer/footer.php');
 echo view('dashboard/modals/delete_modal');
 ?>
+<script>
+$(document).ready(function() {
+    $('#table-category').DataTable({
+        serverSide: true,
+        ajax: BASE_URL + "category/getCategories",
+        pageLength: 2,
+        ordering: false,
+    });
+});
+</script>

@@ -51,6 +51,30 @@ class Category extends BaseController
         ]);
     }
 
+    public function getCategories()
+    {
+        $categories = $this->categorymodel->getPaginate($this->request->getGet("length"), $this->request->getGet("start"));
+        $data = [];
+        $i = 1;
+        
+        foreach($categories as $k=>$v){
+            $imgsrc = base_url($v['image'] ? 'uploads/category_images/'. $v['image'] : 'img/avatar1.png');
+            $data[] = [
+                '<img src="'.$imgsrc.'" alt="'.$v['category'].'" width="80"  class=""/>',
+                $v['category'],
+                "<a class='fas fa-edit text-primary me-1' id='btn-edit' title='Edit category' uid='".$v['id']."'>
+                <a class='fas fa-trash text-danger me-1' id='btn-dlt' title='Delete category' uid='".$v['id']."'>"
+            ];
+            $i++;
+        }
+        echo json_encode([
+            "draw" =>  $this->request->getGet('draw'),
+            "recordsTotal" => 5,
+            "recordsFiltered" => 5,
+            "data" => $data
+        ]);
+    }
+
     public function removeCategory()
     {
         $cmodel = $this->categorymodel;

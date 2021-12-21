@@ -43,48 +43,50 @@ class Profile extends BaseController
 
     public function updateProfile()
     {
-
         $model = $this->usermodel;
         $pmodel = $this->profilemodel;
         $id = $this->session->get('user_details')['id'];
         $img_name = $pmodel->getFields('users_profile.profile_photo', "user_id='$id'")['profile_photo'];
-        if (isset($_FILES['profile']) && $_FILES['profile']['name']) {
-            $photo = $_FILES['profile'];
-            $img = explode('.', $photo['name']);
-            $name = $img[0];
-            $ext = end($img);
-            $tmp_name = $photo['tmp_name'];
-            $size = $photo['size'];
-            $type = $photo['type'];
-            $img_name = md5($name . time()) . "." . $ext;
-            move_uploaded_file($tmp_name, "uploads/user_images/" . $img_name);
+
+        $file = $this->request->getFile("profile");
+        if ($file->isValid()) {            
+            $ext = $file->getClientExtension();
+            if($ext == "png" || $ext == "jpg"){
+                $img_name = $file->getRandomName();
+                $file->move('uploads/user_images/', $img_name);
+                $data = [
+                    'first_name' => $this->request->getPost('fname'),
+                    'last_name' => $this->request->getPost('lname'),
+                    'dob' => $this->request->getPost('dob'),
+                    'gender' => $this->request->getPost('gender'),
+                    'address' => $this->request->getPost('address'),
+                    'profile_photo' => $img_name,
+                    'updated_at' => date("d/m/Y"),
+                ];
+                $pmodel->updateRow($data, "user_id=$id");
+                $user_detail = [
+                    "id" => $id,
+                    "name" => $this->request->getPost('fname') . " " . $this->request->getPost('lname'),
+                    "photo" => base_url("uploads/user_images/" . $img_name),
+                    file_exists(base_url("uploads/user_images/" . $img_name)) ? base_url("uploads/user_images/" . $img_name) : base_url("img/avatar.png"),
+                ];
+                $this->session->set("user_details", $user_detail);
+                echo json_encode([
+                    "status" => 1,
+                    "msg" => "Profile updated successfully."
+                ]);
+            }else{
+                echo json_encode([
+                    "status" => 0,
+                    "msg" => "Profile picture is invalid. Only PNG and JPG alloweded."
+                ]);
+            }
+        }else{
+            echo json_encode([
+                "status" => 0,
+                "msg" => "Profile picture is invalid."
+            ]);            
         }
-        // $data = [
-        //     'mobile' => $this->request->getPost('mobile'),
-        //     'email' => $this->request->getPost('email'),
-        //     'updated_at' => date("d/m/Y"),
-        // ];
-        // $model->updateRow($data, "id=$id");
-        $data = [
-            'first_name' => $this->request->getPost('fname'),
-            'last_name' => $this->request->getPost('lname'),
-            'dob' => $this->request->getPost('dob'),
-            'gender' => $this->request->getPost('gender'),
-            'address' => $this->request->getPost('address'),
-            'profile_photo' => $img_name,
-            'updated_at' => date("d/m/Y"),
-        ];
-        $pmodel->updateRow($data, "user_id=$id");
-        $user_detail = [
-            "id" => $id,
-            "name" => $this->request->getPost('fname') . " " . $this->request->getPost('lname'),
-            "photo" => base_url("uploads/user_images/" . $img_name),
-            file_exists(base_url("uploads/user_images/" . $img_name)) ? base_url("uploads/user_images/" . $img_name) : base_url("img/avatar.png"),
-        ];
-        $this->session->set("user_details", $user_detail);
-        echo json_encode([
-            "status" => 1,
-        ]);
     }
 
     public function changePass()
